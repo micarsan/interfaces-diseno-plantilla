@@ -1,30 +1,86 @@
 /* Variables */
 :root {
-    /* Colores definidos para cambiar el tema*/
-    --theme-azul: 23, 93, 173;
-    --transition-time: 0.5s;
-    --transition-type: ease-in-out;
-    --theme-color_: var(--theme-azul);
-    /* Color por defecto */
-    --theme-color: rgb(var(--theme-color_));
-    --transitions: var(--transition-time) var(--transition-type);
+    
+    --max-width: 1100px; /* Ancho máximo para el contenido */
+    
+    /* tema claro */
+    --theme-light-font-color: rgb(35, 35, 35);
+    --theme-light-font-color_: 35, 35, 35;
+    --theme-light-a-color: #bc0000;
+
   }
   
 
-html { font-size: 16px; }
+html {
+    font-size: 16px;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    color: var(--theme-light-font-color);
+}
+body { margin: 0; }
+a { color: var(--theme-light-font-color); }
+a:visited { color: var(--theme-light-font-color); }
+a:hover { color: var(--theme-light-a-color); }
 
-body {
-    margin: 0;
+
+header {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: space-between;
+    align-items: center;
 }
 
-header nav {
-    background-color: rgb(var(--theme-azul), 0.4);
+header .logo {
+    padding: 10px 20px;
+}
+header nav { width: -webkit-fill-available; }
+header nav ul {
+    padding: 0px;
 }
 header nav ul li {
     display: inline-block;
-    padding: 5px;
 }
 header nav ul li a {
     text-decoration: none;
-    color: var(--theme-color);
+    padding: 10px;
+    margin: 0 10px;
+    border-radius: 2px;
+    border-bottom: 3px solid transparent;
+    transition: all 0.4s;
+}
+header nav ul li a:hover {
+    border-bottom: 3px solid var(--theme-light-a-color);
+}
+header #searchbox {
+    margin: 0 20px;
+}
+header #searchbox input {
+    color: transparent;
+    width: 34px;
+    height: 34px;
+    box-sizing: border-box;
+    padding: 6px;
+    opacity: 0.8;
+    outline: 2px solid transparent;
+    border: 2px solid rgba(var(--theme-light-font-color_), 0.7);
+    border-radius: 28px;
+    font-size: 16px;
+    background-image: url('../img/searchicon_light.png');
+    background-position: 6px 6px;
+    background-repeat: no-repeat;
+    transition: all 0.5s ease-in-out;
+}
+
+header #searchbox input:focus,
+header #searchbox input:focus-visible {
+  color: #000;
+  outline: 2px solid rgba(var(--theme-light-font-color_), 0.7);
+  width: 300px;
+  padding-left: 31px;
+}
+
+
+main {
+    max-width: var(--max-width);
+    background-color: #bbb;
+    margin: auto;
 }
