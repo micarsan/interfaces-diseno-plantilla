@@ -1,0 +1,30 @@
+/* Variables */
+:root {
+    /* Colores definidos para cambiar el tema*/
+    --theme-azul: 23, 93, 173;
+    --transition-time: 0.5s;
+    --transition-type: ease-in-out;
+    --theme-color_: var(--theme-azul);
+    /* Color por defecto */
+    --theme-color: rgb(var(--theme-color_));
+    --transitions: var(--transition-time) var(--transition-type);
+  }
+  
+
+html { font-size: 16px; }
+
+body {
+    margin: 0;
+}
+
+header nav {
+    background-color: rgb(var(--theme-azul), 0.4);
+}
+header nav ul li {
+    display: inline-block;
+    padding: 5px;
+}
+header nav ul li a {
+    text-decoration: none;
+    color: var(--theme-color);
+}
