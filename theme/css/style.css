@@ -8,6 +8,7 @@
     --theme-light-font-color_: 35,35,35;
     --theme-light-a-color: rgb(255,0,0);
     --theme-light-a-color_: 255,0,0;
+    --theme-light-borders: rgb(115, 115, 115);
 
   }
   
@@ -42,7 +43,7 @@ header .search_and_user .logo {
     opacity: 0;
 }
 
-header nav { width: -webkit-fill-available; transition: all 0.4s; }
+header nav { width: -webkit-fill-available; transition: all 0.5s ease-in-out; }
 header nav.blur { filter: blur(3px); }
 
 header nav ul {
@@ -79,9 +80,8 @@ header #searchbox input {
     height: 34px;
     box-sizing: border-box;
     padding: 6px;
-    opacity: 0.8;
     outline: 2px solid transparent;
-    border: 2px solid rgba(var(--theme-light-font-color_), 0.7);
+    border: 2px solid rgba(var(--theme-light-font-color_), 0.5);
     border-radius: 28px;
     font-size: 1.2rem;
     background-image: url('../img/searchicon_light.png');
@@ -113,8 +113,7 @@ header #userbox {
     width: 34px;
     height: 34px;
     box-sizing: border-box;
-    opacity: 0.45;
-    border: 2px solid rgba(var(--theme-light-font-color_), 0.7);
+    border: 2px solid var(--theme-light-borders);
     border-radius: 28px;
     background-image: url('../img/user_light.png');
     background-position: 0px 6px;
@@ -122,19 +121,32 @@ header #userbox {
     background-size: contain;
 }
 
-header #userbox>div {
-    display:none;
-    position: absolute;
-    right: 0;
-    width: 200px;
-
-
-    background-color: red;
-
+header #userbox>a {
+    display: block;
+    width: 34px;
+    height: 34px;
+    z-index: 5;
 }
 
-header #userbox:active>div {
+header #userbox>div {
+    opacity: 0;
+    position: absolute;
+    z-index: -1;
+    top: -200px;
+    right: 25px;
+    width: 200px;
+    padding: 20px;
+    transition: opacity 0.2s cubic-bezier(0.21, 0.72, 0.16, 1.02), top 0.4s cubic-bezier(0.02, 1, 0.75, 0.98);
+    background-color: white;
+    border: 1px solid white;
+    border-radius: 10px;
+    box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+
+header #userbox.active>div {
     display:block;
+    top:65px;
+    opacity: 1;
 }
 
 

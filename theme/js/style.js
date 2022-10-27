@@ -11,8 +11,8 @@ window.addEventListener("load", function(){
 
     
     //Capa de usuario
-    document.querySelector('header #userbox').addEventListener('click', ()==> {
-        //this.classList.toggle('active');
+    document.querySelector('header #userbox>a').addEventListener('click', function(){
+        this.parentNode.classList.toggle('active');
     });
 
 });
