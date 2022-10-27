@@ -7,20 +7,31 @@
   </head>
   <body>
     <header>
+      <div class="search_and_user">
+        <div class="logo"><img src="theme/img/headerlogo.png" width="64" /></div>
+        <div id="searchbox">
+          <form><input type="text" name="search" placeholder="" /></form>
+        </div>
+        <div id="userbox"><div>
+          <form>
+            <label for="user">Usuario</label>
+            <input type="text" id="user" />
+            <label for="password">Usuario</label>
+            <input type="text" id="password" />
+          </form>
+        </div></div>
+        </div>
+      </div>
       <div class="logo"><img src="theme/img/headerlogo.png" width="64" /></div>
       <nav>
         <ul>
-          <li><a href="">Productividad</a></li>
+          <li><a class="active" href="">Productividad</a></li>
           <li><a href="">Ocio</a></li>
           <li><a href="">Vida</a></li>
           <li><a href="">Social</a></li>
         </ul>
       </nav>
       <div>
-        <div id="searchbox"><div>
-          <form><input type="text" name="search" placeholder="" /></form>
-        </div></div>
-        <div id="user"></div>
       </div>
     </header>
     <main>
@@ -28,4 +39,5 @@ contenido
     </main>
     <footer></footer>
   </body>
+  <script lang="text/javascript" src="theme/js/style.js"></script>
 </html>

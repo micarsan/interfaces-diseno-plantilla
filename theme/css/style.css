@@ -4,9 +4,10 @@
     --max-width: 1100px; /* Ancho máximo para el contenido */
     
     /* tema claro */
-    --theme-light-font-color: rgb(35, 35, 35);
-    --theme-light-font-color_: 35, 35, 35;
-    --theme-light-a-color: #bc0000;
+    --theme-light-font-color: rgb(35,35,35);
+    --theme-light-font-color_: 35,35,35;
+    --theme-light-a-color: rgb(255,0,0);
+    --theme-light-a-color_: 255,0,0;
 
   }
   
@@ -22,17 +23,28 @@ a:visited { color: var(--theme-light-font-color); }
 a:hover { color: var(--theme-light-a-color); }
 
 
-header {
+header, header .search_and_user {
     display: flex;
     flex-wrap: nowrap;
     justify-content: space-between;
     align-items: center;
 }
+header .search_and_user {
+    right: 0;
+    z-index: 1;
+}
 
-header .logo {
+header .logo, header .search_and_user .logo {
     padding: 10px 20px;
 }
-header nav { width: -webkit-fill-available; }
+
+header .search_and_user .logo {
+    opacity: 0;
+}
+
+header nav { width: -webkit-fill-available; transition: all 0.4s; }
+header nav.blur { filter: blur(3px); }
+
 header nav ul {
     padding: 0px;
 }
@@ -47,12 +59,20 @@ header nav ul li a {
     border-bottom: 3px solid transparent;
     transition: all 0.4s;
 }
-header nav ul li a:hover {
+header nav ul li a:hover, header nav ul li a.active {
     border-bottom: 3px solid var(--theme-light-a-color);
 }
+
+header .search_and_user {
+    position: absolute;
+
+}
+
 header #searchbox {
     margin: 0 20px;
+    background-color: white;
 }
+
 header #searchbox input {
     color: transparent;
     width: 34px;
@@ -63,19 +83,58 @@ header #searchbox input {
     outline: 2px solid transparent;
     border: 2px solid rgba(var(--theme-light-font-color_), 0.7);
     border-radius: 28px;
-    font-size: 16px;
+    font-size: 1.2rem;
     background-image: url('../img/searchicon_light.png');
     background-position: 6px 6px;
     background-repeat: no-repeat;
+/*    background-color: rgba(255,255,255,1); */
     transition: all 0.5s ease-in-out;
+    text-align: center;
 }
 
 header #searchbox input:focus,
 header #searchbox input:focus-visible {
-  color: #000;
-  outline: 2px solid rgba(var(--theme-light-font-color_), 0.7);
-  width: 300px;
-  padding-left: 31px;
+  color: rgb(var(--theme-light-font-color_));
+  border-color: rgba(var(--theme-light-a-color_), 0.75);
+  outline-color: rgba(var(--theme-light-a-color_), 0.75);
+  width: 50vw;
+  padding-left: 34px;
+  padding-right: 3px;
+  margin-right: 18vw;
+  height: 38px;
+}
+
+header #searchbox {
+    margin: 0 20px;
+}
+
+header #userbox {
+    margin-right: 25px;
+    width: 34px;
+    height: 34px;
+    box-sizing: border-box;
+    opacity: 0.45;
+    border: 2px solid rgba(var(--theme-light-font-color_), 0.7);
+    border-radius: 28px;
+    background-image: url('../img/user_light.png');
+    background-position: 0px 6px;
+    background-repeat: no-repeat;
+    background-size: contain;
+}
+
+header #userbox>div {
+    display:none;
+    position: absolute;
+    right: 0;
+    width: 200px;
+
+
+    background-color: red;
+
+}
+
+header #userbox:active>div {
+    display:block;
 }
 
 
