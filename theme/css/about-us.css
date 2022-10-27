@@ -1,15 +1,3 @@
-.col-sm {
-  width: 30%;
-}
-
-.col-md {
-  width: 70%;
-}
-
-.col-mid {
-  width: 50%;
-}
-
 #header{
   display: flex;
   flex-direction: row;
@@ -115,4 +103,8 @@ blockquote.quote:before,
 
 #cifras tr td h3 {
   text-align: center;
+}
+
+#details-product {
+  display: flex;
 }

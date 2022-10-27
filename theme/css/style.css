@@ -84,3 +84,27 @@ main {
     background-color: #bbb;
     margin: auto;
 }
+
+.ifmenu {
+    width: 100% !important;
+}
+
+.col-sm {
+    width: 30%;
+}
+  
+.col-md {
+    width: 70%;
+}
+  
+.col-mid {
+    width: 50%;
+}
+
+.col-xl {
+    width: 60%;
+}
+
+.col-x {
+    width: 40%;
+}
