@@ -1,0 +1,118 @@
+.col-sm {
+  width: 30%;
+}
+
+.col-md {
+  width: 70%;
+}
+
+.col-mid {
+  width: 50%;
+}
+
+#header{
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin: 45px 0px 45px 0px;
+}
+
+#header h1 {
+  text-transform: uppercase;
+}
+
+#header h2 {
+  margin-bottom:5px;
+}
+
+#header h3 {
+  margin-top: 0px;
+}
+
+#equipo {
+  background-image: url("../../src/Mujeres-en-el-trabajo-scaled.jpg");
+  height: 70vh;
+  background-size: cover;
+}
+
+main {
+  background-color: transparent !important;
+}
+
+.component, #descripcion {
+  display: flex;
+  align-items: center;
+  margin: 45px 0px 45px;
+}
+
+blockquote{
+  margin: 45px 0px 45px 0px;
+}
+
+blockquote.quote {
+  position: relative; 
+  text-align: center;
+  padding: 1rem 1.2rem;
+  width: 80%;  /* create space for the quotes */
+  color: #484748;
+  margin: 1rem 5em 2rem;
+}
+  
+/* -- create the quotation marks -- */
+blockquote.quote:before,
+.component blockquote.quote:after{
+  font-family: FontAwesome;
+  position: absolute;
+  color: #000;
+  font-size: 34px;
+}
+
+.component blockquote.EN:before{
+  content: "\f10d";
+  top: -12px;
+  margin-right: -20px;
+  right: 100%;
+}
+.component blockquote.EN:after{
+  content: "\f10e";
+  margin-left: -20px;
+  left: 100%;  
+  top: auto;
+}
+
+.image-container {
+  display: flex;
+  padding: 4% 2%;
+  box-sizing: border-box;
+  height: 50vh;
+}
+
+.box {
+  flex: 1;
+  overflow: hidden;
+  transition: .5s;
+  margin: 0 2%;
+  box-shadow: 0 20px 30px rgba(0,0,0,.1);
+  line-height: 0;
+}
+
+.box > img {
+  width: 200%;
+  height: calc(100%);
+  object-fit: cover; 
+  transition: .5s;
+}
+
+.box:hover { flex: 1 1 50%; }
+.box:hover > img {
+  width: 100%;
+  height: 100%;
+}
+
+#nuestro-equipo h2 {
+  text-transform: uppercase;
+}
+
+#cifras tr td h3 {
+  text-align: center;
+}
