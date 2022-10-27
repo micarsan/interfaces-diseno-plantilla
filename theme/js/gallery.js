@@ -1,118 +1,64 @@
-var gallery = document.querySelector('.gallery');
-var galleryItems = document.querySelectorAll('.gallery-item');
-var numOfItems = gallery.children.length;
-var itemWidth = 23; // percent: as set in css
-
-var featured = document.querySelector('.featured-item');
-
-var leftBtn = document.querySelector('.move-btn.left');
-var rightBtn = document.querySelector('.move-btn.right');
-var leftInterval;
-var rightInterval;
-
-var scrollRate = 0.2;
-var left;
-
-function selectItem(e) {
-	if (e.target.classList.contains('active')) return;
-	
-	featured.style.backgroundImage = e.target.style.backgroundImage;
-	
-	for (var i = 0; i < galleryItems.length; i++) {
-		if (galleryItems[i].classList.contains('active'))
-			galleryItems[i].classList.remove('active');
-	}
-	
-	e.target.classList.add('active');
+// selecting required element
+const element = document.querySelector(".pagination ul");
+let totalPages = 4;
+let page = 1;
+ 
+//calling function with passing parameters and adding inside element which is ul tag
+element.innerHTML = createPagination(totalPages, page);
+function createPagination(totalPages, page){
+  let liTag = '';
+  let active;
+  let beforePage = page - 1;
+  let afterPage = page + 1;
+  if((page > 1)&&(totalPages>5)){ //show the next button if the page value is greater than 1
+    liTag += `<li class="btn prev" onclick="createPagination(totalPages, ${page - 1})"><span><i class="fas fa-angle-left"></i> Prev</span></li>`;
+  }
+ 
+  if((page > 5)){ //if page value is less than 2 then add 1 after the previous button
+    liTag += `<li class="first numb" onclick="createPagination(totalPages, 1)"><span>1</span></li>`;
+    if(page > 10){ //if page value is greater than 3 then add this (...) after the first li or page
+      liTag += `<li class="dots"><span>...</span></li>`;
+    }
+  }
+ 
+  // how many pages or li show before the current li
+  if (page == totalPages) {
+    beforePage = beforePage - 2;
+  } else if (page == totalPages - 1) {
+    beforePage = beforePage - 1;
+  }
+  // how many pages or li show after the current li
+  if (page == 1) {
+    afterPage = afterPage + 2;
+  } else if (page == 2) {
+    afterPage  = afterPage + 1;
+  }
+ 
+  for (var plength = beforePage; plength <= afterPage; plength++) {
+    if (plength > totalPages) { //if plength is greater than totalPage length then continue
+      continue;
+    }
+    if (plength == 0) { //if plength is 0 than add +1 in plength value
+      plength = plength + 1;
+    }
+    if(page == plength){ //if page is equal to plength than assign active string in the active variable
+      active = "active";
+    }else{ //else leave empty to the active variable
+      active = "";
+    }
+    liTag += `<li class="numb ${active}" onclick="createPagination(totalPages, ${plength})"><span>${plength}</span></li>`;
+  }
+ 
+  if((page < totalPages - 1)&&(totalPages>5)){ //if page value is less than totalPage value by -1 then show the last li or page
+    if((page < totalPages - 2)&&(totalPages>5)){ //if page value is less than totalPage value by -2 then add this (...) before the last li or page
+      liTag += `<li class="dots"><span>...</span></li>`;
+    }
+    liTag += `<li class="last numb" onclick="createPagination(totalPages, ${totalPages})"><span>${totalPages}</span></li>`;
+  }
+ 
+  if ((page < totalPages)&&(totalPages>5)) { //show the next button if the page value is less than totalPage(20)
+    liTag += `<li class="btn next" onclick="createPagination(totalPages, ${page + 1})"><span>Next <i class="fas fa-angle-right"></i></span></li>`;
+  }
+  element.innerHTML = liTag; //add li tag inside ul tag
+  return liTag; //reurn the li tag
 }
-
-function galleryWrapLeft() {
-	var first = gallery.children[0];
-	gallery.removeChild(first);
-	gallery.style.left = -itemWidth + '%';
-	gallery.appendChild(first);
-	gallery.style.left = '0%';
-}
-
-function galleryWrapRight() {
-	var last = gallery.children[gallery.children.length - 1];
-	gallery.removeChild(last);
-	gallery.insertBefore(last, gallery.children[0]);
-	gallery.style.left = '-23%';
-}
-
-function moveLeft() {
-	left = left || 0;
-
-	leftInterval = setInterval(function() {
-		gallery.style.left = left + '%';
-
-		if (left > -itemWidth) {
-			left -= scrollRate;
-		} else {
-			left = 0;
-			galleryWrapLeft();
-		}
-	}, 1);
-}
-
-function moveRight() {
-	//Make sure there is element to the leftd
-	if (left > -itemWidth && left < 0) {
-		left = left  - itemWidth;
-		
-		var last = gallery.children[gallery.children.length - 1];
-		gallery.removeChild(last);
-		gallery.style.left = left + '%';
-		gallery.insertBefore(last, gallery.children[0]);	
-	}
-	
-	left = left || 0;
-
-	leftInterval = setInterval(function() {
-		gallery.style.left = left + '%';
-
-		if (left < 0) {
-			left += scrollRate;
-		} else {
-			left = -itemWidth;
-			galleryWrapRight();
-		}
-	}, 1);
-}
-
-function stopMovement() {
-	clearInterval(leftInterval);
-	clearInterval(rightInterval);
-}
-
-leftBtn.addEventListener('mouseenter', moveLeft);
-leftBtn.addEventListener('mouseleave', stopMovement);
-rightBtn.addEventListener('mouseenter', moveRight);
-rightBtn.addEventListener('mouseleave', stopMovement);
-
-
-//Start this baby up
-(function init() {
-	var images = [
-		'https://s3-us-west-2.amazonaws.com/forconcepting/800Wide50Quality/car.jpg',
-		'https://s3-us-west-2.amazonaws.com/forconcepting/800Wide50Quality/city.jpg',
-		'https://s3-us-west-2.amazonaws.com/forconcepting/800Wide50Quality/deer.jpg',
-		'https://s3-us-west-2.amazonaws.com/forconcepting/800Wide50Quality/flowers.jpg',
-		'https://s3-us-west-2.amazonaws.com/forconcepting/800Wide50Quality/food.jpg',
-		'https://s3-us-west-2.amazonaws.com/forconcepting/800Wide50Quality/guy.jpg',
-		'https://s3-us-west-2.amazonaws.com/forconcepting/800Wide50Quality/landscape.jpg',
-		'https://s3-us-west-2.amazonaws.com/forconcepting/800Wide50Quality/lips.jpg',
-		'https://s3-us-west-2.amazonaws.com/forconcepting/800Wide50Quality/night.jpg',
-		'https://s3-us-west-2.amazonaws.com/forconcepting/800Wide50Quality/table.jpg'
-	];
-	
-	//Set Initial Featured Image
-	featured.style.backgroundImage = 'url(' + images[0] + ')';
-	
-	//Set Images for Gallery and Add Event Listeners
-	for (var i = 0; i < galleryItems.length; i++) {
-		galleryItems[i].style.backgroundImage = 'url(' + images[i] + ')';
-		galleryItems[i].addEventListener('click', selectItem);
-	}
-})();
