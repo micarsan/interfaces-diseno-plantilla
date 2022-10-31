@@ -1,64 +1,86 @@
-// selecting required element
-const element = document.querySelector(".pagination ul");
-let totalPages = 4;
-let page = 1;
- 
-//calling function with passing parameters and adding inside element which is ul tag
-element.innerHTML = createPagination(totalPages, page);
-function createPagination(totalPages, page){
-  let liTag = '';
-  let active;
-  let beforePage = page - 1;
-  let afterPage = page + 1;
-  if((page > 1)&&(totalPages>5)){ //show the next button if the page value is greater than 1
-    liTag += `<li class="btn prev" onclick="createPagination(totalPages, ${page - 1})"><span><i class="fas fa-angle-left"></i> Prev</span></li>`;
-  }
- 
-  if((page > 5)){ //if page value is less than 2 then add 1 after the previous button
-    liTag += `<li class="first numb" onclick="createPagination(totalPages, 1)"><span>1</span></li>`;
-    if(page > 10){ //if page value is greater than 3 then add this (...) after the first li or page
-      liTag += `<li class="dots"><span>...</span></li>`;
+//-------------------------------------------
+// THIS IS NOT A PART OF THE PLUGIN. 
+// ONLY FOR THE DEMO.
+//-------------------------------------------
+!(function(){
+  'use strict';
+
+var numOfImages = window.location.search ? parseInt(window.location.search.match(/\d+$/)[0]) : 70,
+  gallery = $('#gallery'),
+  videos = [
+    {
+      title: "Victoria's Secret",
+      url: "https://player.vimeo.com/video/8974462?byline=0&portrait=0",
+      thumb: "https://b.vimeocdn.com/ts/432/699/43269900_100.jpg"
+    },
+    {
+      title: "PEOPLE ARE AWESOME 2013 FULL HD ",
+      url: "https://www.youtube.com/embed/W3OQgh_h4U4",
+      thumb: "https://img.youtube.com/vi/W3OQgh_h4U4/0.jpg"
+    },
+    {
+      title: "Biting Elbows - 'Bad Motherfucker' Official Music Video",
+      url: "https://player.vimeo.com/video/62092214?byline=0&portrait=0",
+      thumb: "https://b.vimeocdn.com/ts/431/797/431797120_100.jpg"
     }
-  }
- 
-  // how many pages or li show before the current li
-  if (page == totalPages) {
-    beforePage = beforePage - 2;
-  } else if (page == totalPages - 1) {
-    beforePage = beforePage - 1;
-  }
-  // how many pages or li show after the current li
-  if (page == 1) {
-    afterPage = afterPage + 2;
-  } else if (page == 2) {
-    afterPage  = afterPage + 1;
-  }
- 
-  for (var plength = beforePage; plength <= afterPage; plength++) {
-    if (plength > totalPages) { //if plength is greater than totalPage length then continue
-      continue;
-    }
-    if (plength == 0) { //if plength is 0 than add +1 in plength value
-      plength = plength + 1;
-    }
-    if(page == plength){ //if page is equal to plength than assign active string in the active variable
-      active = "active";
-    }else{ //else leave empty to the active variable
-      active = "";
-    }
-    liTag += `<li class="numb ${active}" onclick="createPagination(totalPages, ${plength})"><span>${plength}</span></li>`;
-  }
- 
-  if((page < totalPages - 1)&&(totalPages>5)){ //if page value is less than totalPage value by -1 then show the last li or page
-    if((page < totalPages - 2)&&(totalPages>5)){ //if page value is less than totalPage value by -2 then add this (...) before the last li or page
-      liTag += `<li class="dots"><span>...</span></li>`;
-    }
-    liTag += `<li class="last numb" onclick="createPagination(totalPages, ${totalPages})"><span>${totalPages}</span></li>`;
-  }
- 
-  if ((page < totalPages)&&(totalPages>5)) { //show the next button if the page value is less than totalPage(20)
-    liTag += `<li class="btn next" onclick="createPagination(totalPages, ${page + 1})"><span>Next <i class="fas fa-angle-right"></i></span></li>`;
-  }
-  element.innerHTML = liTag; //add li tag inside ul tag
-  return liTag; //reurn the li tag
-}
+  ];
+  
+  // Get some photos from Flickr for the demo
+  $.ajax({
+      url: 'https://api.flickr.com/services/rest/',
+      data: {
+          format: 'json',
+          method: 'flickr.interestingness.getList',
+    per_page : numOfImages,
+          api_key: 'b51d3a7c3988ba6052e25cb152aecba2' // this is my own API key, please use yours
+      },
+    dataType: 'jsonp',
+      jsonp: 'jsoncallback'
+  })
+.done(function (data){
+      var loadedIndex = 1, isVideo;
+  
+  // add the videos to the collection
+  data.photos.photo = data.photos.photo.concat(videos);
+  
+      $.each( data.photos.photo, function(index, photo){
+    isVideo = photo.thumb ? true : false;
+    // http://www.flickr.com/services/api/misc.urls.html
+          var url = 'http://farm' + photo.farm + '.static.flickr.com/' + photo.server + '/' + photo.id + '_' + photo.secret,
+      img = document.createElement('img');
+    
+    // lazy show the photos one by one
+    img.onload = function(e){
+      img.onload = null;
+      var link = document.createElement('a'),
+      li = document.createElement('li')
+      link.href = this.largeUrl;
+
+      link.appendChild(this);
+      if( this.isVideo ){
+        link.rel = 'video';
+        li.className = 'video'
+      }
+      li.appendChild(link);
+      gallery[0].appendChild(li);
+    
+      setTimeout( function(){ 
+        $(li).addClass('loaded');
+      }, 25*loadedIndex++);
+    };
+    
+    img['largeUrl'] = isVideo ? photo.url : url + '_b.jpg';
+    img['isVideo'] = isVideo;
+    img.src = isVideo ? photo.thumb : url + '_t.jpg';
+    img.title = photo.title;
+      });
+
+  // finally, initialize photobox on all retrieved images
+  $('#gallery').photobox('a', { thumbs:true }, callback);
+  // using setTimeout to make sure all images were in the DOM, before the history.load() function is looking them up to match the url hash
+  setTimeout(window._photobox.history.load, 1000);
+  function callback(){
+    console.log('callback for loaded content:', this);
+  };
+  });
+})();
