@@ -10,7 +10,7 @@
 <p align="center">
   <a href="#detalles">Detalles</a> •
   <a href="#demo">Demo</a> •
-  <a href="#autor">Autor</a> •
+  <a href="#autores">Autores</a> •
   <a href="#licencia">Licencia</a>
 </p>
 
@@ -21,10 +21,11 @@
 ## Demo
 [https://daw.miguelcarmona.com/interfaces-diseno-plantilla-tienda/](https://daw.miguelcarmona.com/interfaces-diseno-plantilla-tienda/)
 
-## Autor
+## Autores
 
 Miguel Carmona
 [https://miguelcarmona.com](https://miguelcarmona.com)
+Iván Márquez
 
 ## Licencia
 <a href="https://www.gnu.org/licenses/gpl-3.0.html">GPL3</a>

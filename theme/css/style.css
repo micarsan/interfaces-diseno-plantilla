@@ -1,16 +1,16 @@
 /* Variables */
 :root {
     
-    --max-width: 1100px; /* Ancho máximo para el contenido */
+    --max-width: 1100px; /* max width for content */
     
-    /* tema claro */
+    /* light theme */
     --theme-light-font-color: rgb(35,35,35);
     --theme-light-font-color_: 35,35,35;
-    --theme-light-a-color: rgb(255,0,0);
-    --theme-light-a-color_: 255,0,0;
+    --theme-light-acent-color: rgb(23, 93, 173);
+    --theme-light-acent-color_: 23, 93, 173;
     --theme-light-borders: rgb(115, 115, 115);
 
-  }
+}
   
 
 html {
@@ -19,10 +19,28 @@ html {
     color: var(--theme-light-font-color);
 }
 body { margin: 0; }
-a { color: var(--theme-light-font-color); }
+a { color: var(--theme-light-font-color); text-decoration: none; }
 a:visited { color: var(--theme-light-font-color); }
-a:hover { color: var(--theme-light-a-color); }
+a:hover { color: var(--theme-light-acent-color); }
+button {
+    background-color: rgba(var(--theme-light-acent-color_),0.7);
+    border: 2px solid transparent;
+    border-radius: 0.25em;
+    font-size: 1em;
+    color: white;
+    padding: 5px 10px;
+}
 
+button.light {
+    background-color: rgba(var(--theme-light-acent-color_),0.25);
+    color: var(--theme-light-acent-color);
+}
+
+button:hover, button.light:hover {
+    color: white;
+    background-color: rgba(var(--theme-light-acent-color_),1);
+    cursor: pointer;
+}
 
 header, header .search_and_user {
     display: flex;
@@ -61,7 +79,7 @@ header nav ul li a {
     transition: all 0.4s;
 }
 header nav ul li a:hover, header nav ul li a.active {
-    border-bottom: 3px solid var(--theme-light-a-color);
+    border-bottom: 3px solid var(--theme-light-acent-color);
 }
 
 header .search_and_user {
@@ -71,7 +89,6 @@ header .search_and_user {
 
 header #searchbox {
     margin: 0 20px;
-    background-color: white;
 }
 
 header #searchbox input {
@@ -87,7 +104,6 @@ header #searchbox input {
     background-image: url('../img/searchicon_light.png');
     background-position: 6px 6px;
     background-repeat: no-repeat;
-/*    background-color: rgba(255,255,255,1); */
     transition: all 0.5s ease-in-out;
     text-align: center;
 }
@@ -95,8 +111,8 @@ header #searchbox input {
 header #searchbox input:focus,
 header #searchbox input:focus-visible {
   color: rgb(var(--theme-light-font-color_));
-  border-color: rgba(var(--theme-light-a-color_), 0.75);
-  outline-color: rgba(var(--theme-light-a-color_), 0.75);
+  border-color: rgba(var(--theme-light-acent-color_), 0.75);
+  outline-color: rgba(var(--theme-light-acent-color_), 0.75);
   width: 50vw;
   padding-left: 34px;
   padding-right: 3px;
@@ -152,9 +168,62 @@ header #userbox.active>div {
 
 main {
     max-width: var(--max-width);
-    background-color: #bbb;
     margin: auto;
+    padding: 20px;
 }
+
+
+/* Product gallery */
+.product-gallery {
+    position: relative;
+}
+.product-gallery div {
+    overflow:hidden;
+    scroll-behavior: smooth;
+    margin: 0 15px;
+}
+.product-gallery div div {
+    display: table-cell;
+    padding: 0 10px;
+}
+.product-gallery div div:first-child {
+    padding-left: 2px;
+}
+.product-gallery div div:last-child {
+    padding-right: 2px;
+}
+.product-gallery div div>img {
+    border: 0px solid transparent;
+    border-radius: 10px;
+    box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
+}
+.product-gallery.landscape div div>img {
+    width: 400px;
+}
+.product-gallery.portrait div div>img {
+    width: 200px;
+}
+.product-gallery div div:first-child>img, .product-gallery div div:last-child>img {
+    margin-right: 0px;
+}
+.product-gallery button {
+    position: absolute;
+    top: 40%;
+    color: rgba(var(--theme-light-font-color_),0.7);
+    padding: 5px 12px 0 12px;
+    font-size: 1.5rem;
+    background-color: white;
+    border: 0px;
+    border-radius: 50%;
+    box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
+}
+.product-gallery button.left {
+    left: -5px;
+}
+.product-gallery button.right {
+    right: -5px;
+}
+
 
 .ifmenu {
     width: 100% !important;
