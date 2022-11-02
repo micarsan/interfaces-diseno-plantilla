@@ -29,9 +29,11 @@ a {
     color: var(--theme-light-font-color);
     text-decoration: 1px underline dotted;
 }
+
 a:visited {
     color: var(--theme-light-font-color);
 }
+
 a:hover {
     color: var(--theme-light-acent-color);
 }
@@ -43,15 +45,17 @@ a:hover {
 .bold {
     font-weight: bold;
 }
+
 .italic {
     font-style: italic;
 }
+
 .underline {
     text-decoration: 1px underline;
 }
 
 .no-margin {
-    margin: 0!important;
+    margin: 0 !important;
 }
 
 button {
@@ -63,25 +67,30 @@ button {
     padding: 5px 10px;
 }
 
-button.light, input.light {
+button.light,
+input.light {
     background-color: rgba(var(--theme-light-acent-color_), 0.25);
     color: var(--theme-light-acent-color);
 }
 
-button.clear, input.clear {
+button.clear,
+input.clear {
     background-color: rgba(var(--theme-light-acent-color_), 0.05);
     border: 1px solid rgba(var(--theme-light-acent-color_), 0.15);
     color: var(--theme-light-acent-color);
 }
 
-input.light, input.clear {
+input.light,
+input.clear {
     border: 2px solid transparent;
     border-radius: 0.45em;
     font-size: 1em;
     padding: 5px 10px;
 }
 
-button:hover, input.light:hover, input.clear:hover {
+button:hover,
+input.light:hover,
+input.clear:hover {
     color: white;
     background-color: rgba(var(--theme-light-acent-color_), 1);
     cursor: pointer;
@@ -189,15 +198,13 @@ header #searchbox input:focus-visible {
     margin-right: 0;
     height: 38px;
 }
+
 @media screen and (min-width: 570px) {
-    header #searchbox input:focus, header #searchbox input:focus-visible {
+
+    header #searchbox input:focus,
+    header #searchbox input:focus-visible {
         margin-right: 15vw;
     }
-}
-
-
-header #searchbox {
-    margin: 0 20px;
 }
 
 header #userbox {
@@ -248,13 +255,22 @@ header #userbox.active>div {
     }
 }
 
-header #userbox fieldset, header #userbox fieldset input[type=text], header #userbox fieldset input[type=password] {
+header #userbox fieldset {
+    margin-bottom: 17px;
+}
+
+header #userbox fieldset,
+header #userbox fieldset input[type=text],
+header #userbox fieldset input[type=password] {
     border: 1px solid rgba(var(--theme-light-acent-color_), 0.45);
     border-radius: 5px;
 }
-header #userbox fieldset input[type=text], header #userbox fieldset input[type=password] {
+
+header #userbox fieldset input[type=text],
+header #userbox fieldset input[type=password] {
     padding: 5px;
 }
+
 header #userbox fieldset legend {
     color: rgba(var(--theme-light-acent-color_), 0.65);
 }
@@ -266,6 +282,7 @@ header #userbox fieldset>form>div {
     align-items: center;
     margin-bottom: 15px;
 }
+
 header #userbox fieldset>form>div:last-child {
     margin-bottom: 5px;
 }
@@ -273,9 +290,11 @@ header #userbox fieldset>form>div:last-child {
 header #userbox fieldset>form>div label {
     width: 35%;
 }
+
 header #userbox fieldset>form>div input {
     width: 60%;
 }
+
 header #userbox fieldset>form>div input[type=submit] {
     width: 45%;
 }
@@ -296,7 +315,8 @@ section.categories nav ul li a {
     border-bottom: 3px solid transparent;
     transition: all 0.4s;
 }
-section.categories nav ul li:first-child{
+
+section.categories nav ul li:first-child {
     margin-left: 0;
 }
 
@@ -306,7 +326,9 @@ section.categories nav ul li a.active {
 }
 
 
-main, section.categories, footer>div {
+main,
+section.categories,
+footer>div {
     max-width: var(--max-width);
     margin: auto;
     padding: 0 20px 10px 20px;
@@ -328,6 +350,7 @@ footer>div {
 footer div>* {
     width: 100%;
 }
+
 @media screen and (min-width: 570px) {
     footer>div>* {
         width: 30%;
