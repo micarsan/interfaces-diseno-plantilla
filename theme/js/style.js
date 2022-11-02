@@ -90,3 +90,16 @@ function product_gallery(){
     }
 
 }
+
+
+/**
+ * Show or hide overlay layer
+ */
+function overlay( status ) {
+    if( status ) {
+        document.getElementById('overlay').classList.add('show');
+    } else {
+        document.getElementById('overlay').classList.remove('show');
+    }
+}
+

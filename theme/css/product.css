@@ -1,6 +1,7 @@
 main>section {
     margin-bottom: 25px;
 }
+
 section.product_header {
     margin-top: 10px;
     display: flex;
@@ -9,15 +10,18 @@ section.product_header {
     justify-content: space-between;
     align-items: flex-start;
 }
+
 section.product_header h1 {
     font-size: 2.6em;
     margin: 0;
 }
+
 section.product_header h4 {
     margin: 0;
     font-weight: 100;
     text-align: center;
 }
+
 section.product_header .additional_data {
     margin: 20px 0;
     display: flex;
@@ -26,33 +30,41 @@ section.product_header .additional_data {
     justify-content: flex-start;
     align-items: center;
 }
+
 section.product_header .additional_data>* {
     margin-right: 20px;
 }
+
 section.product_header button.install {
     width: 100%;
     margin-bottom: 20px;
 }
+
 @media screen and (max-width: 750px) {
     section.product_header {
         flex-direction: column-reverse;
     }
+
     section.product_header .main_icon {
         margin-bottom: 20px;
     }
+
     section.product_header>* {
         width: 100%;
     }
 }
+
 section.product_header .main_icon div {
     position: relative;
-    margin:auto;
+    margin: auto;
     width: 180px;
 }
+
 section.product_header .main_icon div img:first-child {
     border-radius: 10%;
     box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
 }
+
 section.product_header .main_icon div img:last-child {
     position: absolute;
     bottom: -10px;
@@ -63,14 +75,38 @@ section.product_header .main_icon div img:last-child {
 }
 
 section.product_info fieldset {
-    border: 2px solid rgba(var(--theme-light-acent-color_),0.6);
+    border: 2px solid rgba(var(--theme-light-acent-color_), 0.6);
     border-radius: 8px;
 }
+
 section.product_info fieldset legend h3 {
-    color: rgba(var(--theme-light-acent-color_),0.65);
+    color: rgba(var(--theme-light-acent-color_), 0.65);
     margin: 0 5px;
 }
+
 section.product_info fieldset p {
     margin: 10px;
 }
 
+#full-screen-image {
+    position: fixed;
+    opacity: 0;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.4s ease-in-out;
+}
+#full-screen-image.show {
+    opacity: 1;
+}
+
+#full-screen-image img {
+    border: 0px solid transparent;
+    border-radius: 10px;
+    box-shadow: 0 1px 2px 0 rgb(60 64 67 / 60%), 0 1px 3px 1px rgba(60, 64, 67, 60%);
+}

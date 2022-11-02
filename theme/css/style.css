@@ -108,7 +108,14 @@ input.clear:hover {
     right: 0;
     bottom: 0;
     overflow: hidden;
-    background-color: rgba(0, 0, 0, 0.24);
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 5;
+    transition: all 0.4s ease-in-out;
+}
+
+#overlay.show {
+    display: block;
+    opacity: 1;
 }
 
 
