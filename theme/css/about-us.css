@@ -108,3 +108,30 @@ blockquote.quote:before,
 #details-product {
   display: flex;
 }
+
+@media (max-width: 800px) {
+  
+  .col-sm, .col-md, .col-mid {
+    width: 100% !important;
+  }
+
+  .component, #descripcion {
+    display: flex;
+    align-items: center;
+    margin: 45px 0px 45px;
+    flex-direction: column;
+  }
+
+  table#cifras {
+    margin: auto;
+  }
+
+  blockquote.quote {
+    position: relative;
+    text-align: center;
+    padding: 1rem 1.2rem;
+    width: 80%;
+    color: #484748;
+    margin: 50px auto;
+  }
+}
