@@ -13,7 +13,7 @@
 
 }
 
-
+/* -- Texts style -- */
 html {
     font-size: 16px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
@@ -60,6 +60,7 @@ a:hover {
     margin: 0 !important;
 }
 
+/* -- Buttons and inputs -- */
 button {
     background-color: rgba(var(--theme-light-acent-color_), 0.7);
     border: 2px solid transparent;
@@ -98,7 +99,7 @@ input.clear:hover {
     cursor: pointer;
 }
 
-
+/* -- Overlay -- */
 #overlay {
     display: none;
     opacity: 0;
@@ -118,7 +119,7 @@ input.clear:hover {
     opacity: 1;
 }
 
-
+/* -- Header -- */
 header .header_top,
 header .search_and_user {
     display: flex;
@@ -134,18 +135,6 @@ header .header_top h1 {
     font-size: 1.2em;
     color: rgba(var(--theme-light-font-color_), 0.8);
     transition: all 0.5s ease-in-out;
-}
-
-@media screen and (min-width: 516px) {
-    header .header_top h1 {
-        font-size: 1.5em;
-    }
-}
-
-@media screen and (min-width: 570px) {
-    header .header_top h1 {
-        font-size: 1.8em;
-    }
 }
 
 header .header_top div:last-child {
@@ -174,6 +163,7 @@ header .search_and_user.input_focus {
     width: -webkit-fill-available;
 }
 
+/* -- Searchbox -- */
 header #searchbox {
     margin: 0 20px;
 }
@@ -208,14 +198,7 @@ header #searchbox input:focus-visible {
     height: 38px;
 }
 
-@media screen and (min-width: 570px) {
-
-    header #searchbox input:focus,
-    header #searchbox input:focus-visible {
-        margin-right: 15vw;
-    }
-}
-
+/* -- Userbox -- */
 header #userbox {
     margin-right: 25px;
     width: 34px;
@@ -255,13 +238,6 @@ header #userbox.active>div {
     display: block;
     top: 65px;
     opacity: 1;
-}
-
-@media screen and (min-width: 570px) {
-    header #userbox>div {
-        right: 25px;
-        width: 300px;
-    }
 }
 
 header #userbox fieldset {
@@ -308,6 +284,7 @@ header #userbox fieldset>form>div input[type=submit] {
     width: 45%;
 }
 
+/* -- Navigation -- */
 section.categories nav ul {
     padding: 0px;
 }
@@ -335,6 +312,7 @@ section.categories nav ul li a.active {
 }
 
 
+/* -- Footer -- */
 main,
 section.categories,
 footer>div {
@@ -358,13 +336,6 @@ footer>div {
 footer div>* {
     width: 100%;
 }
-
-@media screen and (min-width: 570px) {
-    footer>div>* {
-        width: 30%;
-    }
-}
-
 
 
 /* Product gallery */
@@ -404,17 +375,6 @@ footer div>* {
     width: 80vw;
 }
 
-@media screen and (min-width: 516px) {
-    .product-gallery.landscape div div>img {
-        width: 400px;
-    }
-    
-    .product-gallery.portrait div div>img {
-        width: 200px;
-    }
-}
-
-
 .product-gallery div div:first-child>img,
 .product-gallery div div:last-child>img {
     margin-right: 0px;
@@ -425,7 +385,6 @@ footer div>* {
     top: 40%;
     color: rgba(var(--theme-light-font-color_), 0.5);
     background-color: white;
-/*    padding: 5px 11px 0 11px; */
     font-size: 1.5rem;
     line-height: 1.5em;
     border: 0px;
@@ -445,6 +404,7 @@ footer div>* {
     right: -8px;
 }
 
+/* -- Overlay fullscreen -- */
 #full-screen-image {
     position: fixed;
     opacity: 0;
@@ -468,6 +428,7 @@ footer div>* {
     box-shadow: 0 1px 2px 0 rgb(60 64 67 / 60%), 0 1px 3px 1px rgba(60, 64, 67, 60%);
 }
 
+/* -- Sizes to flex -- */
 .col-sm {
     width: 30%;
 }
@@ -486,4 +447,39 @@ footer div>* {
 
 .col-x {
     width: 40%;
+}
+
+/* -- Media queries -- */
+@media screen and (min-width: 516px) {
+    .product-gallery.landscape div div>img {
+        width: 400px;
+    }
+    
+    .product-gallery.portrait div div>img {
+        width: 200px;
+    }
+
+    header .header_top h1 {
+        font-size: 1.5em;
+    }
+}
+
+@media screen and (min-width: 570px) {
+    footer>div>* {
+        width: 30%;
+    }
+
+    header #userbox>div {
+        right: 25px;
+        width: 300px;
+    }
+
+    header .header_top h1 {
+        font-size: 1.8em;
+    }
+
+    header #searchbox input:focus,
+    header #searchbox input:focus-visible {
+        margin-right: 15vw;
+    }
 }

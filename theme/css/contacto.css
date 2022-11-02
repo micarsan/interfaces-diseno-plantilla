@@ -81,31 +81,15 @@ ul {
   resize: none;
 }
 
-.contact form button {
-  background-color: rgba(var(--theme-light-acent-color_), 0.7);
-  border: 2px solid transparent;
-  border-radius: 0.45em;
-  font-size: 1em;
-  color: white;
-  padding: 5px 10px;
-}
-
-.contact form button:hover,
-.contact form button:focus {
-  background: #3952a3;
-  color: #ffffff;
-  outline: 0;
-}
-
-i.fa {
-  margin-right: 10px;
-  color: white;
-}
-
 label {
   margin-bottom: 5px;
 }
 
+/* -- Iconos -- */
+i.fa {
+  margin-right: 10px;
+  color: white;
+}
 
 /* -- Media queries -- */
 @media only screen and (min-width: 700px) {
