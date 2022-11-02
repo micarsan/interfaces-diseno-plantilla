@@ -29,11 +29,9 @@ a {
     color: var(--theme-light-font-color);
     text-decoration: 1px underline dotted;
 }
-
 a:visited {
     color: var(--theme-light-font-color);
 }
-
 a:hover {
     color: var(--theme-light-acent-color);
 }
@@ -41,6 +39,7 @@ a:hover {
 .blur {
     filter: blur(3px);
 }
+
 .bold {
     font-weight: bold;
 }
@@ -49,6 +48,10 @@ a:hover {
 }
 .underline {
     text-decoration: 1px underline;
+}
+
+.no-margin {
+    margin: 0!important;
 }
 
 button {
@@ -258,11 +261,35 @@ section.categories nav ul li a.active {
 }
 
 
-main, section.categories {
+main, section.categories, footer>div {
     max-width: var(--max-width);
     margin: auto;
     padding: 0 20px 10px 20px;
 }
+
+footer {
+    background-color: rgba(var(--theme-light-acent-color_), 0.15);
+    margin-top: 20px;
+    padding-top: 20px;
+}
+
+footer>div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+footer div>* {
+    width: 100%;
+}
+@media screen and (min-width: 570px) {
+    footer>div>* {
+        width: 30%;
+    }
+}
+
+
 
 /* Product gallery */
 .product-gallery {
