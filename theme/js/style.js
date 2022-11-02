@@ -48,10 +48,20 @@ function product_gallery(){
     // Landscape Galleries
     let galleries = document.querySelectorAll('.product-gallery');
     for( let gallery of galleries ) {
+
+        let scrool_width = gallery.querySelector('img').offsetWidth + 20;
+
+        // Image width (full width in mobile portrait)
+        let image_width = gallery.querySelector('div').offsetWidth - 4;
+        if( image_width < 500 ) {
+            
+            let images = gallery.querySelectorAll('img');
+            document.getElementsByTagName('style')[0].textContent += '.product-gallery.landscape div div>img, .product-gallery.portrait div div>img { width: ' + image_width + 'px; } ';
+            
+            scrool_width = image_width + 20;
+        }
         
         // buttons
-        let scrool_width = gallery.querySelector('img').offsetWidth + 20;
-        
         gallery.querySelector('button.left').addEventListener('click', function(){
             gallery.querySelector('div').scrollLeft += -scrool_width;
         });

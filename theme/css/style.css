@@ -368,6 +368,7 @@ footer div>* {
     overflow: hidden;
     scroll-behavior: smooth;
     margin: 0 15px;
+    border-radius: 10px;
 }
 
 .product-gallery div div {
@@ -389,13 +390,21 @@ footer div>* {
     box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
 }
 
-.product-gallery.landscape div div>img {
-    width: 400px;
+.product-gallery.landscape div div>img,
+.product-gallery.portrait div div>img {
+    width: 80vw;
 }
 
-.product-gallery.portrait div div>img {
-    width: 200px;
+@media screen and (min-width: 516px) {
+    .product-gallery.landscape div div>img {
+        width: 400px;
+    }
+    
+    .product-gallery.portrait div div>img {
+        width: 200px;
+    }
 }
+
 
 .product-gallery div div:first-child>img,
 .product-gallery div div:last-child>img {
