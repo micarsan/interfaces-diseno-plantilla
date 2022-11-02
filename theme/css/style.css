@@ -5,8 +5,8 @@
     /* max width for content */
 
     /* light theme */
-    --theme-light-font-color: rgb(35, 35, 35);
-    --theme-light-font-color_: 35, 35, 35;
+    --theme-light-font-color: rgb(55, 55, 55);
+    --theme-light-font-color_: 55, 55, 55;
     --theme-light-acent-color: rgb(23, 93, 173);
     --theme-light-acent-color_: 23, 93, 173;
     --theme-light-borders: rgb(115, 115, 115);
@@ -17,8 +17,11 @@
 html {
     font-size: 16px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    color: var(--theme-light-font-color);
     min-width: 360px;
+}
+
+h1, h2, h3, h4, h5, h6, a, p {
+    color: var(--theme-light-font-color);
 }
 
 body {
@@ -26,7 +29,6 @@ body {
 }
 
 a {
-    color: var(--theme-light-font-color);
     text-decoration: 1px underline dotted;
 }
 
