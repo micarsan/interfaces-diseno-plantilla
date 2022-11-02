@@ -1,3 +1,4 @@
+/* -- header -- */
 #header{
   display: flex;
   flex-direction: row;
@@ -5,6 +6,7 @@
   margin: 45px 0px 45px 0px;
 }
 
+/* -- Titles -- */
 #header h1 {
   text-transform: uppercase;
 }
@@ -17,22 +19,30 @@
   margin-top: 0px;
 }
 
+#nuestro-equipo h2 {
+  text-transform: uppercase;
+}
+
+#cifras tr td h3 {
+  text-align: center;
+}
+
+/* -- Team block -- */
 #equipo {
   background-image: url("../../src/Mujeres-en-el-trabajo-scaled.jpg");
   height: 70vh;
   background-size: cover;
 }
 
-main {
-  background-color: transparent !important;
-}
-
+/* -- Component block -- */
 .component, #descripcion {
   display: flex;
   align-items: center;
   margin: 45px 0px 45px;
 }
 
+
+/* -- Comment -- */
 blockquote{
   margin: 45px 0px 45px 0px;
 }
@@ -68,6 +78,8 @@ blockquote.quote:before,
   top: auto;
 }
 
+
+/* -- Expandable images -- */
 .image-container {
   display: flex;
   padding: 4% 2%;
@@ -97,18 +109,7 @@ blockquote.quote:before,
   height: 100%;
 }
 
-#nuestro-equipo h2 {
-  text-transform: uppercase;
-}
-
-#cifras tr td h3 {
-  text-align: center;
-}
-
-#details-product {
-  display: flex;
-}
-
+/* Media queries*/
 @media (max-width: 800px) {
   
   .col-sm, .col-md, .col-mid {
