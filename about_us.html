@@ -1,17 +1,61 @@
 <!DOCTYPE html>
 <html lang="es">
-
-<head>
-  <meta charset="utf-8">
-  <title>Mi compañía - login</title>
-  <link rel="stylesheet" href="theme/css/style.css" />
-  <link rel="stylesheet" href="theme/css/about-us.css" />
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
-</head>
-
-<body>
-  <iframe class="ifmenu" src="menu.html" frameborder="0"></iframe>
-  <main>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Progressive Web Application - Ecosia: Busca, planta árboles.</title>
+    <link rel="stylesheet" href="theme/css/style.css" />
+    <link rel="stylesheet" href="theme/css/about-us.css" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css"/>
+  </head>
+  <body>
+    <div id="overlay"> </div>
+    <header>
+      <div class="search_and_user">
+        <div class="logo"><img src="theme/img/headerlogo.webp" width="64" /></div>
+        <div id="searchbox">
+          <form><input type="text" name="search" placeholder="" autocomplete="off" /></form>
+        </div>
+        <div id="userbox">
+          <a> </a>
+          <div>
+            <fieldset>
+              <legend>login</legend>
+              <form>
+                <div>
+                  <label for="user">User:</label>
+                  <input type="text" id="user" />
+                </div>
+                <div>
+                  <label for="password">Password:</label>
+                  <input type="password" id="password" />
+                </div>
+                <div>
+                  <input class="light" type="submit" value="Sign in" />
+                  <input class="light" type="submit" value="PSW recovery" />
+                </div>
+              </form>
+            </fieldset>
+            <div><a href="">No account? Click for new user.</a></div>
+          </div>
+        </div>
+      </div>
+      <div class="header_top">
+        <div class="logo"><img src="theme/img/headerlogo.webp" width="64" /></div>
+        <h1>Progressive Web App Store</h1>
+        <div> </div>
+      </div>
+    </header>
+    <section class="categories">
+      <nav>
+        <ul>
+          <li><a class="active" href="product.html">Ficha App</a></li>
+          <li><a href="about_us.html">Sobre nosotros</a></li>
+          <li><a href="contact.html">Contacto</a></li>
+        </ul>
+      </nav>
+    </section>
+    <main>
     <section id="header">
       <div class="col-sm"></div>
       <div class="col-md">
