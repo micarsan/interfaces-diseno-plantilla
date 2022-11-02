@@ -34,31 +34,22 @@ ul {
   padding: 1em;
 }
 
-/* ------------------- */
-/* COMPANY INFORMATION */
-/* ------------------- */
 
-.company-info {
-}
-
+/* --- Company info -- */
 .company-info h3,
 .company-info ul {
   text-align: center;
   margin: 0 0 1rem 0;
 }
 
-/* ------- */
-/* CONTACT */
-/* ------- */
 
+/* -- Contact -- */
 .contact {
   background: #dcdfea;
 }
 
-/* ---- */
-/* FORM */
-/* ---- */
 
+/* -- Form -- */
 .contact form {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -116,10 +107,8 @@ label {
   margin-bottom: 5px;
 }
 
-/* ------------- */
-/* MEDIA QUERIES */
-/* ------------- */
 
+/* -- Media queries -- */
 @media only screen and (min-width: 700px) {
   .wrapper {
     display: grid;
