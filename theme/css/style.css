@@ -60,6 +60,17 @@ a:hover {
     margin: 0 !important;
 }
 
+.brand {
+    text-align: center;
+      font-weight: 300;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+}
+  
+.brand span {
+    color: #000;
+}
+
 /* -- Buttons and inputs -- */
 button {
     background-color: rgba(var(--theme-light-acent-color_), 0.7);

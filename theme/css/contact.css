@@ -1,3 +1,5 @@
+
+/* -- Size adjustments -- */
 * {
   box-sizing: border-box;
 }
@@ -12,17 +14,6 @@
 ul {
   list-style: none;
   padding: 0;
-}
-
-.brand {
-  text-align: center;
-	font-weight: 300;
-	text-transform: uppercase;
-	letter-spacing: 0.1em;
-}
-
-.brand span {
-  color: #000;
 }
 
 .wrapper {
