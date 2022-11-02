@@ -47,6 +47,9 @@ a:hover {
 .italic {
     font-style: italic;
 }
+.underline {
+    text-decoration: 1px underline;
+}
 
 button {
     background-color: rgba(var(--theme-light-acent-color_), 0.7);
