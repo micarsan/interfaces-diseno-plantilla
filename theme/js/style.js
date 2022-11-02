@@ -43,6 +43,11 @@ window.addEventListener("load", function(){
 
 });
 
+window.addEventListener("resize", function(){
+    // product galleries
+    product_gallery();
+});
+
 function product_gallery(){
     
     // Landscape Galleries
@@ -54,9 +59,17 @@ function product_gallery(){
         // Image width (full width in mobile portrait)
         let image_width = gallery.querySelector('div').offsetWidth - 4;
         if( image_width < 500 ) {
+
+            // Check and create if <style data-gallery> not exist
+            if( !document.querySelector('style[data-gallery]') ) {
+                console.log('dentro');
+                let style = document.createElement('style');
+                style.setAttribute('data-gallery', '');
+                document.head.appendChild( style );
+            }
             
             let images = gallery.querySelectorAll('img');
-            document.getElementsByTagName('style')[0].textContent += '.product-gallery.landscape div div>img, .product-gallery.portrait div div>img { width: ' + image_width + 'px; } ';
+            document.querySelector('style[data-gallery]').textContent = '.product-gallery.landscape div div>img, .product-gallery.portrait div div>img { width: ' + image_width + 'px; } ';
             
             scrool_width = image_width + 20;
         }
