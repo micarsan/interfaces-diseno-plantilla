@@ -63,19 +63,25 @@ button {
     padding: 5px 10px;
 }
 
-button.light {
+button.light, input.light {
     background-color: rgba(var(--theme-light-acent-color_), 0.25);
     color: var(--theme-light-acent-color);
 }
 
-button.clear {
+button.clear, input.clear {
     background-color: rgba(var(--theme-light-acent-color_), 0.05);
     border: 1px solid rgba(var(--theme-light-acent-color_), 0.15);
     color: var(--theme-light-acent-color);
 }
 
-button:hover,
-button.light:hover {
+input.light, input.clear {
+    border: 2px solid transparent;
+    border-radius: 0.45em;
+    font-size: 1em;
+    padding: 5px 10px;
+}
+
+button:hover, input.light:hover, input.clear:hover {
     color: white;
     background-color: rgba(var(--theme-light-acent-color_), 1);
     cursor: pointer;
@@ -219,8 +225,8 @@ header #userbox>div {
     position: absolute;
     z-index: -1;
     top: -200px;
-    right: 25px;
-    width: 200px;
+    right: 5vw;
+    width: 80vw;
     padding: 20px;
     transition: opacity 0.2s cubic-bezier(0.21, 0.72, 0.16, 1.02), top 0.4s cubic-bezier(0.02, 1, 0.75, 0.98);
     background-color: white;
@@ -233,6 +239,45 @@ header #userbox.active>div {
     display: block;
     top: 65px;
     opacity: 1;
+}
+
+@media screen and (min-width: 570px) {
+    header #userbox>div {
+        right: 25px;
+        width: 300px;
+    }
+}
+
+header #userbox fieldset, header #userbox fieldset input[type=text], header #userbox fieldset input[type=password] {
+    border: 1px solid rgba(var(--theme-light-acent-color_), 0.45);
+    border-radius: 5px;
+}
+header #userbox fieldset input[type=text], header #userbox fieldset input[type=password] {
+    padding: 5px;
+}
+header #userbox fieldset legend {
+    color: rgba(var(--theme-light-acent-color_), 0.65);
+}
+
+header #userbox fieldset>form>div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+    margin-bottom: 15px;
+}
+header #userbox fieldset>form>div:last-child {
+    margin-bottom: 5px;
+}
+
+header #userbox fieldset>form>div label {
+    width: 35%;
+}
+header #userbox fieldset>form>div input {
+    width: 60%;
+}
+header #userbox fieldset>form>div input[type=submit] {
+    width: 45%;
 }
 
 section.categories nav ul {
