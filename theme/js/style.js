@@ -90,7 +90,6 @@ function product_gallery(){
 
             // Check and create if <style data-gallery> not exist
             if( !document.querySelector('style[data-gallery]') ) {
-                console.log('dentro');
                 let style = document.createElement('style');
                 style.setAttribute('data-gallery', '');
                 document.head.appendChild( style );
