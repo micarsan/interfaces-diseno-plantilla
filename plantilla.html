@@ -2,10 +2,12 @@
 <html lang="es">
   <head>
     <meta charset="utf-8">
-    <title>Mi compañía - login</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Progressive Web Application Store</title>
     <link rel="stylesheet" href="theme/css/style.css" />
   </head>
   <body>
+    <div id="overlay"> </div>
     <header>
       <div class="search_and_user">
         <div class="logo"><img src="theme/img/headerlogo.webp" width="64" /></div>
@@ -28,30 +30,34 @@
           </div>
         </div>
       </div>
-      <div class="logo"><img src="theme/img/headerlogo.webp" width="64" /></div>
-      <nav>
-        <ul>
-          <li><a class="active" href="">Productividad</a></li>
-          <li><a href="">Ocio</a></li>
-          <li><a href="">Vida</a></li>
-          <li><a href="">Social</a></li>
-        </ul>
-      </nav>
-      <div>
+      <div class="header_top">
+        <div class="logo"><img src="theme/img/headerlogo.webp" width="64" /></div>
+        <h1>Progressive Web App Store</h1>
+        <div> </div>
       </div>
     </header>
+    <section class="categories">
+      <nav>
+        <ul>
+          <li><a class="active" href="">Category 1</a></li>
+          <li><a href="">Category 2</a></li>
+          <li><a href="">Category 3</a></li>
+          <li><a href="">Category 4</a></li>
+        </ul>
+      </nav>
+    </section>
     <main>
-      <div><h1>Título h1</h1></div>
-      <div><h2>Título h2</h2></div>
-      <div><h3>Título h3</h3></div>
-      <div><h4>Título h4</h4></div>
-      <div><h5>Título h5</h5></div>
-      <div><button>botón</button> <button class="light">botón light</button></div>
-      <div><a href="\">enlace</a></div>
+      <div><h1>Title h1</h1></div>
+      <div><h2>Title h2</h2></div>
+      <div><h3>Title h3</h3></div>
+      <div><h4>Title h4</h4></div>
+      <div><h5>Title h5</h5></div>
+      <div><button>button</button> <button class="light">button.light</button> <button class="clear">button.clear</button></div>
+      <div style="margin-top: 10px;"><a href="\">link example</a></div>
       <div>
-        <h3>Galería de producto vertical</h3>
+        <h3>Product gallery - Portrait</h3>
         <div class="product-gallery portrait">
-          <button class="left">&#129144;</button>
+          <button class="left">&#10132;</button>
           <div>
             <div><img src="plantilla_media_examples/product-1/full-image1.webp" /></div>
             <div><img src="plantilla_media_examples/product-1/full-image2.webp" /></div>
@@ -61,13 +67,13 @@
             <div><img src="plantilla_media_examples/product-1/full-image6.webp" /></div>
             <div><img src="plantilla_media_examples/product-1/full-image7.webp" /></div>
           </div>
-          <button class="right">&#129146;</button>
+          <button class="right">&#10132;</button>
         </div>
       </div>
       <div>
-        <h3>Galería de producto horizontal</h3>
+        <h3>Product gallery - landscape</h3>
         <div class="product-gallery landscape">
-          <button class="left">&#129144;</button>
+          <button class="left">&#10132;</button>
           <div>
             <div><img src="plantilla_media_examples/product-2/full-image1.webp" /></div>
             <div><img src="plantilla_media_examples/product-2/full-image2.webp" /></div>
@@ -76,7 +82,7 @@
             <div><img src="plantilla_media_examples/product-2/full-image5.webp" /></div>
             <div><img src="plantilla_media_examples/product-2/full-image6.webp" /></div>
           </div>
-          <button class="right">&#129146;</button>
+          <button class="right">&#10132;</button>
         </div>
       </div>
     </main>

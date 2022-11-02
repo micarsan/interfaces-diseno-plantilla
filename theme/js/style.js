@@ -1,17 +1,38 @@
 
 window.addEventListener("load", function(){
 
-    // Efecto blur a nav cuando hagamos foco en búsqueda
+    // Blur efect when focus on header search input and animations
     document.querySelector('#searchbox input').addEventListener("focus", function(){
-        document.querySelector('header nav').classList.add('blur');
+        
+        let header_h1 =  document.querySelector('header .header_top h1');
+        
+        header_h1.classList.add('blur');
+
+        let available_width = header_h1.offsetWidth + 74;
+        let input_width = available_width/2;
+        let input_margin = available_width/4;
+        
+        if( available_width < 550 ) {
+            input_width = available_width-25;
+            input_margin = 0;
+        }
+
+        document.querySelector('header #searchbox input').style.width = input_width + 'px';
+        document.querySelector('header #searchbox input').style.marginRight = input_margin +'px';
     });
+    
     document.querySelector('#searchbox input').addEventListener("focusout", function(){
-        document.querySelector('header nav').classList.remove('blur');
+        
+        document.querySelector('header .header_top h1').classList.remove('blur');
+
+        document.querySelector('header #searchbox input').style.width = '';
+        document.querySelector('header #searchbox input').style.marginRight = '';
+
     });
 
     
 
-    // Capa de usuario
+    // User box
     document.querySelector('header #userbox>a').addEventListener('click', function(){
         this.parentNode.classList.toggle('active');
     });
@@ -39,12 +60,6 @@ function product_gallery(){
             gallery.querySelector('div').scrollLeft += scrool_width;
         });
 
-/*        gallery.querySelector('div').addEventListener('scrool', function(){
-            if( gallery.querySelector('div').scrollLeft == 0 ) {
-                console.log(gallery.querySelector('div').scrollLeft);
-            }
-        });
-*/
     }
 
 }
