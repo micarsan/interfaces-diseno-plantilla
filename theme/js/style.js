@@ -72,6 +72,10 @@ function product_gallery(){
             document.querySelector('style[data-gallery]').textContent = '.product-gallery.landscape div div>img, .product-gallery.portrait div div>img { width: ' + image_width + 'px; } ';
             
             scrool_width = image_width + 20;
+        } else {
+            if( document.querySelector('style[data-gallery]') ) {
+                document.querySelector('style[data-gallery]').remove();
+            }
         }
         
         // buttons
