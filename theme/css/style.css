@@ -336,7 +336,6 @@ footer>div {
 
 footer {
     background-color: rgba(var(--theme-light-acent-color_), 0.15);
-    margin-top: 20px;
     padding-top: 20px;
 }
 
