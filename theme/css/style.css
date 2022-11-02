@@ -27,7 +27,7 @@ body {
 
 a {
     color: var(--theme-light-font-color);
-    text-decoration: none;
+    text-decoration: 1px underline dotted;
 }
 
 a:visited {
@@ -40,6 +40,12 @@ a:hover {
 
 .blur {
     filter: blur(3px);
+}
+.bold {
+    font-weight: bold;
+}
+.italic {
+    font-style: italic;
 }
 
 button {
