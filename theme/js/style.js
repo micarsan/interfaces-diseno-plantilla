@@ -31,14 +31,13 @@ window.addEventListener("load", function () {
     });
 
 
-
     // User box
     document.querySelector('header #userbox>a').addEventListener('click', function () {
         this.parentNode.classList.toggle('active');
     });
 
 
-    // product galleries
+    // product gallery
     product_gallery();
 
     // product gallery full screen image
@@ -57,23 +56,25 @@ window.addEventListener("load", function () {
  */
 function full_screen_image(index_key) {
 
-    if (document.querySelector('#full-screen-image') ) {
-        document.querySelector('#full-screen-image button.left').remove();
-        document.querySelector('#full-screen-image button.right').remove();
-        document.querySelector('#full-screen-image img').remove();
-
-        var container = document.querySelector('#full-screen-image');
-    } else {
-        var container = document.createElement('div');
-        container.id = 'full-screen-image';
-    }
+    //Force index_key to integer
+    index_key = parseInt(index_key);
 
     let images = document.querySelectorAll('.product-gallery img');
-
+    if( images.length < 1 ) return false;
     let image = images[index_key];
+
+    // Check if base layer exist
+    let container = document.querySelector('#full-screen-image');
+    if( !document.querySelector('#full-screen-image') ) {
+        container = document.createElement('div');
+        container.id = 'full-screen-image';
+    }
     
-    if (!document.querySelector('#overlay_image')) {
-        let overlay_image = document.createElement('div');
+    // Check if overlay exist
+    let overlay_image = document.querySelector('#overlay_image');
+    if( !overlay_image ) {
+        
+        overlay_image = document.createElement('div');
         overlay_image.id = 'overlay_image';
         overlay_image.classList.add('overlay');
         overlay_image.classList.add('show');
@@ -81,93 +82,124 @@ function full_screen_image(index_key) {
         container.appendChild(overlay_image);
     }
     
-
-    let left_button = document.createElement('button');
-    left_button.classList.add('left');
-    left_button.innerHTML = '&#10132;';
-
-    if( index_key > 0 ) {
-        left_button.addEventListener('click', function(){
-            full_screen_image(index_key-1);
-        });
-    }
-
-    let right_button = document.createElement('button');
-    right_button.classList.add('right');
-    right_button.innerHTML = '&#10132;';
+    /// check if buttons exist
+    // left
+    let left_button = document.querySelector('#full-screen-image button.left');
+    if( !left_button ) {
+        
+        left_button = document.createElement('button');
+        left_button.classList.add('left');
+        left_button.innerHTML = '&#10132;';
+        container.appendChild(left_button);
     
-    if( index_key < images.length-1 ) {
-        right_button.addEventListener('click', function(){
-            full_screen_image(index_key+1);
-        });
-    }
-
-    if (index_key == images.length-1) {
-        right_button.addEventListener('click', function(){
-            index_key = 0;
-            full_screen_image(index_key);
-        });
-    }
-
-    if (index_key == 0) {
         left_button.addEventListener('click', function(){
-            index_key = images.length-1;
-            full_screen_image(index_key);
+            full_screen_image( left_button.getAttribute('data-index') );
         });
     }
+    
+    let prev_index = index_key - 1;
+    if( index_key == 0 ) { prev_index = images.length - 1; } // fist element
+    left_button.setAttribute('data-index', prev_index);
 
-    let img = document.createElement('img');
 
-    img.setAttribute('src', image.getAttribute('src'));
-    img.setAttribute('style', 'height: 90vh; margin: auto; z-index:15;');
+    // right
+    let right_button = document.querySelector('#full-screen-image button.right');
+    if( !right_button ) {
+        
+        right_button = document.createElement('button');
+        right_button.classList.add('right');
+        right_button.innerHTML = '&#10132;';
+        container.appendChild(right_button);
+    
+        right_button.addEventListener('click', function(){
+            full_screen_image( right_button.getAttribute('data-index') );
+        });
+    }
+    
+    let next_index = index_key + 1;
+    if( index_key == (images.length - 1) ) { next_index = 0; } // last element
+    right_button.setAttribute('data-index', next_index);
+
+
+    /// Images (one for view and one for transitions)
+    // Main image
+    let img_main = document.querySelector('#full-screen-image img.main');
+    if( !img_main ) {
+        img_main = document.createElement('img');
+        img_main.classList.add('main');
+    }
+    
+    img_main.setAttribute('src', image.getAttribute('src'));
+    container.appendChild(img_main);
+
+
+    // Side image (for transitions efects)
+    let img_side = document.querySelector('#full-screen-image img.side');
+    if( !img_side ) {
+        img_side = document.createElement('img');
+        img_side.classList.add('side');
+    }
+    
+    img_side.setAttribute('src', image.getAttribute('src'));
+    container.appendChild(img_side);
+
 
     // Check proportions
     setTimeout(() => {
-        if( (window.innerHeight / window.innerWidth) > (img.height / img.width) ) {
-            img.setAttribute('style', 'width: 90vw; margin: auto;')
+        if( (window.innerHeight / window.innerWidth) > (img_main.height / img_main.width) ) {
+            img_main.setAttribute('style', 'width: 90vw;')
+            img_side.setAttribute('style', 'width: 90vw;')
         }
     }, 10);
 
 
-    container.appendChild(left_button);
-    container.appendChild(img);
-    container.appendChild(right_button);
-
-    document.body.appendChild(container);
+    if( !document.querySelector('#full-screen-image') ) {
+        document.body.appendChild(container);
+    }
 
     setTimeout(() => {
         container.classList.add('show');
-        full_screen_image_buttons();
+        full_screen_image_buttons_positions();
     }, 10);
 
     
-    
-    document.querySelector('.overlay.show').addEventListener('click', function () {
+    /// Close all
+       
+        // When click on overlay
+        overlay_image.addEventListener('click', function () {
+            container.classList.add('opacity_hide');
+            setTimeout(() => {
+                container.remove();
+            }, 500);
+        });
         
-        container.classList.add('opacity_hide');
+        // When click on image
+        img_main.addEventListener('click', function () {
+            container.classList.add('opacity_hide');
+            setTimeout(() => {
+                container.remove();
+            }, 500);
+        });
 
-        setTimeout(() => {
-            container.remove();
-        }, 500);
-        
-    });
 }
 
 /**
- * Insert back and next buttons on full screen image
+ * Set positions of next and preview full screen image
  */
-function full_screen_image_buttons() {
+function full_screen_image_buttons_positions() {
+    
     let image = document.querySelector('#full-screen-image img');
-    if (image) {
+    
+    if( image ) {
         let position = image.getBoundingClientRect();
-        console.log(position)
-        let positionleft = position.left + window.scrollX;
-        let positionright = position.right;
-        let izquierda = document.querySelector('#full-screen-image button.left');
-        let right = document.querySelector('#full-screen-image button.right');
-        let width = image.offsetWidth;
-        izquierda.setAttribute('style', 'left: ' + (positionleft - 25) + 'px; z-index:20;')
-        right.setAttribute('style', 'right: ' + (positionright - width - 25) + 'px; z-index:20;')
+        
+        let position_left = position.left + window.scrollX;
+        let position_right = position.right;
+        
+        let left_button = document.querySelector('#full-screen-image button.left');
+        let right_button = document.querySelector('#full-screen-image button.right');
+        left_button.setAttribute('style', 'left: ' + (position_left - 25) + 'px; z-index:20;')
+        right_button.setAttribute('style', 'right: ' + (position_right - image.offsetWidth - 25) + 'px; z-index:20;')
     }
 
 }
@@ -175,7 +207,7 @@ function full_screen_image_buttons() {
 window.addEventListener("resize", function () {
     // product galleries
     product_gallery();
-    full_screen_image_buttons();
+    full_screen_image_buttons_positions();
 });
 
 function product_gallery() {
