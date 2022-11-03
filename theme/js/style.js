@@ -124,26 +124,41 @@ function full_screen_image(index_key) {
 
 
     /// Images (one for view and one for transitions)
-    // Main image
-    let img_main = document.querySelector('#full-screen-image img.main');
-    if( !img_main ) {
-        img_main = document.createElement('img');
-        img_main.classList.add('main');
-    }
-    
-    img_main.setAttribute('src', image.getAttribute('src'));
-    container.appendChild(img_main);
-
 
     // Side image (for transitions efects)
     let img_side = document.querySelector('#full-screen-image img.side');
     if( !img_side ) {
+        
         img_side = document.createElement('img');
         img_side.classList.add('side');
+        
+        container.appendChild(img_side);
     }
-    
     img_side.setAttribute('src', image.getAttribute('src'));
-    container.appendChild(img_side);
+        
+    // Main image
+    let img_main = document.querySelector('#full-screen-image img.main');
+    if( !img_main ) {
+        
+        img_main = document.createElement('img');
+        img_main.classList.add('main');
+        container.appendChild(img_main);
+    }
+
+    // Check if an image is being displayed in main
+    if( img_main.hasAttribute('src') ) {
+        
+        img_main.style.opacity=0;
+
+        setTimeout(() => {
+            img_main.setAttribute('src', image.getAttribute('src'));
+            img_main.style.opacity=1;
+        }, 600);
+
+    } else {
+        
+        img_main.setAttribute('src', image.getAttribute('src'));
+    }
 
 
     // Check proportions
@@ -166,22 +181,21 @@ function full_screen_image(index_key) {
 
     
     /// Close all
-       
-        // When click on overlay
-        overlay_image.addEventListener('click', function () {
-            container.classList.add('opacity_hide');
-            setTimeout(() => {
-                container.remove();
-            }, 500);
-        });
-        
-        // When click on image
-        img_main.addEventListener('click', function () {
-            container.classList.add('opacity_hide');
-            setTimeout(() => {
-                container.remove();
-            }, 500);
-        });
+    // When click on overlay
+    overlay_image.addEventListener('click', function () {
+        container.classList.add('opacity_hide');
+        setTimeout(() => {
+            container.remove();
+        }, 500);
+    });
+    
+    // When click on image
+    img_main.addEventListener('click', function () {
+        container.classList.add('opacity_hide');
+        setTimeout(() => {
+            container.remove();
+        }, 500);
+    });
 
 }
 
