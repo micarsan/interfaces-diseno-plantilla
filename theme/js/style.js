@@ -54,6 +54,8 @@ window.addEventListener("load", function () {
 /**
  * Create and insert image in full screen
  * Need index of array
+ * 
+ * Añadir en un futuro a los botones un data index, para no borrarlos y que se cambie la propiedad
  */
 function full_screen_image(index_key) {
 

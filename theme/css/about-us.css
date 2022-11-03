@@ -119,8 +119,12 @@ blockquote.quote:before,
   .component, #descripcion {
     display: flex;
     align-items: center;
-    margin: 45px 0px 45px;
+    margin: 0px;
     flex-direction: column;
+  }
+  
+  .component img {
+    margin-bottom: 45px;
   }
 
   table#cifras {
@@ -130,9 +134,23 @@ blockquote.quote:before,
   blockquote.quote {
     position: relative;
     text-align: center;
-    padding: 1rem 1.2rem;
+    padding: 0px;
     width: 80%;
     color: #484748;
-    margin: 50px auto;
+    margin: 80px auto;
   }
+
+  .component blockquote.EN:before {
+    content: "\f10d";
+    top: -40px;
+    margin-right: -20px;
+    right: 100%;
+}
+
+.component blockquote.EN:after {
+    content: "\f10e";
+    margin-left: -20px;
+    left: 100%;
+    top: 110%;
+}
 }
