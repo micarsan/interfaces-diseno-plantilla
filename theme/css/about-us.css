@@ -152,5 +152,17 @@ blockquote.quote:before,
     margin-left: -20px;
     left: 100%;
     top: 110%;
+
+    
+}
+table#cifras tr {
+    display: flex;
+    flex-wrap: wrap;
+  
+}
+
+table#cifras td {
+  width: 45%;
+  text-align: center;
 }
 }
