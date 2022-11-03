@@ -61,7 +61,7 @@ function full_screen_image(index_key) {
         document.querySelector('#full-screen-image button.left').remove();
         document.querySelector('#full-screen-image button.right').remove();
         document.querySelector('#full-screen-image img').remove();
-        
+
         var container = document.querySelector('#full-screen-image');
     } else {
         var container = document.createElement('div');
@@ -99,6 +99,20 @@ function full_screen_image(index_key) {
     if( index_key < images.length-1 ) {
         right_button.addEventListener('click', function(){
             full_screen_image(index_key+1);
+        });
+    }
+
+    if (index_key == images.length-1) {
+        right_button.addEventListener('click', function(){
+            index_key = 0;
+            full_screen_image(index_key);
+        });
+    }
+
+    if (index_key == 0) {
+        left_button.addEventListener('click', function(){
+            index_key = images.length-1;
+            full_screen_image(index_key);
         });
     }
 
