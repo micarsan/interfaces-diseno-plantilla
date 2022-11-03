@@ -13,14 +13,21 @@
 
 }
 
-/* -- Texts style -- */
+/* -- Text style -- */
 html {
     font-size: 16px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     min-width: 360px;
 }
 
-h1, h2, h3, h4, h5, h6, a, p {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+p {
     color: var(--theme-light-font-color);
 }
 
@@ -60,13 +67,17 @@ a:hover {
     margin: 0 !important;
 }
 
+.opacity_hide {
+    opacity: 0 !important;
+}
+
 .brand {
     text-align: center;
-      font-weight: 300;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
+    font-weight: 300;
+    text-transform: uppercase;
+    letter-spacing: 0.1em;
 }
-  
+
 .brand span {
     color: #000;
 }
@@ -111,7 +122,8 @@ input.clear:hover {
 }
 
 /* -- Overlay -- */
-#overlay, .overlay {
+#overlay,
+.overlay {
     display: none;
     opacity: 0;
     position: fixed;
@@ -122,10 +134,11 @@ input.clear:hover {
     overflow: hidden;
     background-color: rgba(0, 0, 0, 0.5);
     z-index: 5;
-    transition: all 0.4s ease-in-out;
+    transition: all 0.3s ease-in-out;
 }
 
-#overlay.show, .overlay.show {
+#overlay.show,
+.overlay.show {
     display: block;
     opacity: 1;
 }
@@ -391,7 +404,8 @@ footer div>* {
     margin-right: 0px;
 }
 
-.product-gallery button, #full-screen-image button {
+.product-gallery button,
+#full-screen-image button {
     position: absolute;
     top: 40%;
     color: rgba(var(--theme-light-font-color_), 0.5);
@@ -406,12 +420,14 @@ footer div>* {
     box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
 }
 
-.product-gallery button.left, #full-screen-image button.left {
+.product-gallery button.left,
+#full-screen-image button.left {
     left: -10px;
     transform: scaleX(-1);
 }
 
-.product-gallery button.right, #full-screen-image button.right {
+.product-gallery button.right,
+#full-screen-image button.right {
     right: -8px;
 }
 
@@ -429,6 +445,7 @@ footer div>* {
     justify-content: center;
     transition: all 0.4s ease-in-out;
 }
+
 #full-screen-image.show {
     opacity: 1;
 }
@@ -465,7 +482,7 @@ footer div>* {
     .product-gallery.landscape div div>img {
         width: 400px;
     }
-    
+
     .product-gallery.portrait div div>img {
         width: 200px;
     }
