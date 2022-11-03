@@ -105,7 +105,15 @@ function full_screen_image(index_key) {
     let img = document.createElement('img');
 
     img.setAttribute('src', image.getAttribute('src'));
-    img.setAttribute('style', 'height: 95%; margin: auto; z-index:15;');
+    img.setAttribute('style', 'height: 90vh; margin: auto; z-index:15;');
+
+    // Check proportions
+    setTimeout(() => {
+        if( (window.innerHeight / window.innerWidth) > (img.height / img.width) ) {
+            img.setAttribute('style', 'width: 90vw; margin: auto;')
+        }
+    }, 10);
+
 
     container.appendChild(left_button);
     container.appendChild(img);
@@ -121,9 +129,13 @@ function full_screen_image(index_key) {
     
     
     document.querySelector('.overlay.show').addEventListener('click', function () {
-        console.log('overlay click');
-        overlay(false);
-        container.remove();
+        
+        container.classList.add('opacity_hide');
+
+        setTimeout(() => {
+            container.remove();
+        }, 500);
+        
     });
 }
 
