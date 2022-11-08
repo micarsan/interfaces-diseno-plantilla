@@ -174,7 +174,8 @@ function product_gallery() {
     right_button.setAttribute('data-index', next_index);
 
 
-    /// Images (one for view and one for transitions)
+
+    /// Images (one for view [main] and one for transitions [side])
 
     // Side image (for transitions efects)
     let img_side = document.querySelector('#full-screen-image img.side');
@@ -204,7 +205,7 @@ function product_gallery() {
         setTimeout(() => {
             img_main.setAttribute('src', image.getAttribute('src'));
             img_main.style.opacity=1;
-        }, 600);
+        }, 200);
 
     } else {
         
