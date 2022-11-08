@@ -112,8 +112,20 @@ function product_gallery() {
     if( images.length < 1 ) return false;
     let image = images[index_key];
 
-    // Get only gallery of image (exclude other galeries in same page)
-    images = image.parentNode.parentNode.querySelectorAll('img');
+    // Get limits of this gallery (exclude other galeries in same page)
+    let this_gallery = image.parentNode.parentNode.querySelectorAll('img');
+    let first_index_key = 0;
+    let last_index_key = this_gallery.length-1;
+
+    //Get first and last index_key
+    for( let i=0 ; i<images.length ; i++ ) {
+        if( images[i] === this_gallery[0] ) {
+            first_index_key = i;
+        }
+        if( images[i] === this_gallery[(this_gallery.length-1)] ) {
+            last_index_key = i;
+        }
+    }
 
 
     // Check if base layer exist
@@ -151,7 +163,7 @@ function product_gallery() {
     }
     
     let prev_index = index_key - 1;
-    if( index_key == 0 ) { prev_index = images.length - 1; } // fist element
+    if( index_key == first_index_key ) { prev_index = last_index_key; }
     left_button.setAttribute('data-index', prev_index);
 
 
@@ -170,7 +182,7 @@ function product_gallery() {
     }
     
     let next_index = index_key + 1;
-    if( index_key == (images.length - 1) ) { next_index = 0; } // last element
+    if( index_key == last_index_key ) { next_index = first_index_key; } // last element
     right_button.setAttribute('data-index', next_index);
 
 
