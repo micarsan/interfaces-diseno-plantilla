@@ -364,6 +364,10 @@ footer div>* {
 
 /* Product gallery */
 .product-gallery {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
     position: relative;
 }
 
@@ -407,7 +411,6 @@ footer div>* {
 .product-gallery button,
 #full-screen-image button {
     position: absolute;
-    top: 40%;
     color: rgba(var(--theme-light-font-color_), 0.5);
     background-color: white;
     font-size: 1.5rem;
@@ -454,7 +457,6 @@ footer div>* {
     border: 0px solid transparent;
     border-radius: 10px;
     box-shadow: 0 1px 2px 0 rgb(60 64 67 / 60%), 0 1px 3px 1px rgba(60, 64, 67, 60%);
-    height: 90vh;
     margin: auto;
     z-index:15;
     transition: all 0.25s ease-in-out;

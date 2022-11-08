@@ -1,4 +1,3 @@
-
 window.addEventListener("load", function () {
 
     // Blur efect when focus on header search input and animations
@@ -54,7 +53,7 @@ window.addEventListener("load", function () {
 window.addEventListener("resize", function () {
     // product galleries
     product_gallery();
-    full_screen_image_buttons_positions();
+    full_screen_image_positions_and_proportions();
 });
 
 
@@ -212,12 +211,12 @@ function product_gallery() {
     // Check if an image is being displayed in main
     if( img_main.hasAttribute('src') ) {
         
-        img_main.style.opacity=0;
+        img_main.classList.add('opacity_hide');
 
         setTimeout(() => {
             img_main.setAttribute('src', image.getAttribute('src'));
-            img_main.style.opacity=1;
-        }, 200);
+            img_main.classList.remove('opacity_hide');
+        }, 180);
 
     } else {
         
@@ -226,13 +225,6 @@ function product_gallery() {
 
 
 
-    // Check proportions
-    setTimeout(() => {
-        if( (window.innerHeight / window.innerWidth) > (img_main.height / img_main.width) ) {
-            img_main.setAttribute('style', 'width: 90vw;')
-            img_side.setAttribute('style', 'width: 90vw;')
-        }
-    }, 10);
 
 
     // Insert all on body
@@ -242,7 +234,7 @@ function product_gallery() {
 
     setTimeout(() => {
         container.classList.add('show');
-        full_screen_image_buttons_positions();
+        full_screen_image_positions_and_proportions();
     }, 10);
 
     
@@ -269,12 +261,26 @@ function product_gallery() {
 /**
  * Set positions of next and preview full screen image
  */
-function full_screen_image_buttons_positions() {
+function full_screen_image_positions_and_proportions() {
+console.log('dentro');
+    setTimeout(() => {
+        
+        let img_main = document.querySelector('#full-screen-image img.main');
+        let img_side = document.querySelector('#full-screen-image img.side');
+        
+        // Image proportions
+        if( ( img_main.width / img_main.height * window.innerHeight + 20 ) > window.innerWidth ) {
+            img_main.setAttribute('style', 'width: 87%;')
+            img_side.setAttribute('style', 'width: 87%;')
+        } else {
+            img_main.setAttribute('style', 'height: 90%;')
+            img_side.setAttribute('style', 'height: 90%;')
+        }
     
-    let image = document.querySelector('#full-screen-image img');
-    
-    if( image ) {
-        let position = image.getBoundingClientRect();
+
+        // Image buttons positions
+
+        let position = img_main.getBoundingClientRect();
         
         let position_left = position.left + window.scrollX;
         let position_right = position.right;
@@ -282,9 +288,8 @@ function full_screen_image_buttons_positions() {
         let left_button = document.querySelector('#full-screen-image button.left');
         let right_button = document.querySelector('#full-screen-image button.right');
         left_button.setAttribute('style', 'left: ' + (position_left - 25) + 'px; z-index:20;')
-        right_button.setAttribute('style', 'right: ' + (position_right - image.offsetWidth - 25) + 'px; z-index:20;')
-    }
-
+        right_button.setAttribute('style', 'right: ' + (position_right - img_main.offsetWidth - 25) + 'px; z-index:20;')
+    }, 10);
 }
 
 
