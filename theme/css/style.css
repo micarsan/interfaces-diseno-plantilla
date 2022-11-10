@@ -20,25 +20,16 @@ html {
     min-width: 360px;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-a,
-p {
-    color: var(--theme-light-font-color);
-}
-
 body {
     margin: 0;
+    color: var(--theme-light-font-color);
 }
 
 a {
     text-decoration: 1px underline dotted;
 }
 
+a,
 a:visited {
     color: var(--theme-light-font-color);
 }
@@ -227,13 +218,23 @@ header #userbox {
     margin-right: 25px;
     width: 34px;
     height: 34px;
+    cursor: pointer;
     box-sizing: border-box;
     border: 2px solid var(--theme-light-borders);
+    outline: 2px solid transparent;
     border-radius: 28px;
+    background-color: white;
     background-image: url('../img/user_light.png');
     background-position: 0px 6px;
     background-repeat: no-repeat;
     background-size: contain;
+    transition: all 0.4s;
+}
+
+header #userbox.active {
+    border-color: rgba(var(--theme-light-acent-color_), 0.75);
+    outline-color: rgba(var(--theme-light-acent-color_), 0.75);
+    filter: drop-shadow(0px 0px 2px black);
 }
 
 header #userbox>a {
@@ -458,7 +459,7 @@ footer div>* {
     border-radius: 10px;
     box-shadow: 0 1px 2px 0 rgb(60 64 67 / 60%), 0 1px 3px 1px rgba(60, 64, 67, 60%);
     margin: auto;
-    z-index:15;
+    z-index: 15;
     transition: all 0.25s ease-in-out;
 }
 

@@ -31,8 +31,8 @@ window.addEventListener("load", function () {
 
 
     // User loging box
-    document.querySelector('header #userbox>a').addEventListener('click', function () {
-        this.parentNode.classList.toggle('active');
+    document.querySelector('header #userbox').addEventListener('click', function () {
+        this.classList.toggle('active');
     });
 
 
