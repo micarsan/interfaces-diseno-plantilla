@@ -1,0 +1,76 @@
+#header{
+  width: 100%;
+  background-image: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url('../../src/apps.jpg');
+  height: 50vh;
+  border-radius: 10px;
+  box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+#header h1 {
+  font-size: 3rem;
+  text-transform: uppercase;
+  width: 60%;
+  text-align: center;
+}
+
+#categories nav ul {
+  display: flex;
+  gap: 20px;
+  padding: 0px;
+}
+
+#categories nav ul li {
+  border: 1px rgb(218,220,224) solid;
+  border-radius: 9999px;
+  list-style: none;
+  padding: 5px 20px;
+}
+
+#categories nav ul li:nth-child(1) {
+  background-color: #e6f3ef;
+  border: none;
+}
+
+#categories nav ul li a {
+  text-decoration: none;
+}
+
+#last_games {
+  display: grid;
+  grid-template-columns: 33% 33% 33%;
+  gap: 20px;
+}
+
+.game {
+  display: grid;
+  grid-template-columns: max-content auto;
+  margin: 16px 0;
+  gap: 20px;
+}
+
+.game img {
+  border-radius: 10px;
+  box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
+}
+
+.game #description p {
+  margin: 0px;
+}
+
+.game #description p.name {
+  font-weight: bold;
+}
+
+.game #description p.type {
+  font-weight: 100;
+  color: #3a3a3a;
+}
+
+.game #description p i {
+  font-size: 0.6rem;
+  margin-left: 5px;
+  opacity: 0.8;
+}
