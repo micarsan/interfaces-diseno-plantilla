@@ -1,0 +1,34 @@
+header {
+    background-color: #ccc;
+}
+
+header #userbox,
+header #userbox .userinfo .userimage {
+    background-size:115%;
+    background-position: 50% 50%;
+}
+
+header #userbox {
+    background-image: url('../../media/images/user_avatar_min.webp');
+}
+
+header #userbox .userinfo .userimage {
+    width: 200px;
+    height: 200px;
+    margin: auto;
+    margin-top: 30px;
+    border: 4px solid white;
+    outline: 3px solid rgba(var(--theme-light-acent-color_), 0.75); 
+    box-shadow: 0 0px 10px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
+    background-image: url('../../media/images/user_avatar.webp');
+}
+
+header #userbox .userinfo h2 {
+    margin-bottom: 0;
+    text-align: center;
+}
+
+header #userbox .userinfo .profile {
+    margin-top:4px;
+    text-align: center;
+}

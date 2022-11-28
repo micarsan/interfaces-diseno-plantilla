@@ -62,6 +62,10 @@ a:hover {
     opacity: 0 !important;
 }
 
+.rounded {
+    border-radius: 50%;
+}
+
 .brand {
     text-align: center;
     font-weight: 300;
@@ -252,9 +256,9 @@ header #userbox>div {
     right: 5vw;
     width: 80vw;
     padding: 20px;
+    cursor: auto;
     transition: opacity 0.2s cubic-bezier(0.21, 0.72, 0.16, 1.02), top 0.4s cubic-bezier(0.02, 1, 0.75, 0.98);
-    background-color: white;
-    border: 1px solid white;
+    background-color: #eee;
     border-radius: 10px;
     box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
 }
@@ -379,7 +383,8 @@ footer div>* {
     border-radius: 10px;
 }
 
-.product-gallery div div {
+.product-gallery div div,
+.product-gallery div figure {
     display: table-cell;
     padding: 0 10px;
 }
