@@ -1,6 +1,6 @@
 #header{
   width: 100%;
-  background-image: linear-gradient(rgba(255,255,255,0.5), rgba(255,255,255,0.5)), url('../../src/apps.jpg');
+  background-image: linear-gradient(rgba(255,255,255,0.8), rgba(255,255,255,0.8)), url('../../src/apps.jpg');
   height: 50vh;
   border-radius: 10px;
   box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
@@ -14,6 +14,7 @@
   text-transform: uppercase;
   width: 60%;
   text-align: center;
+  color: #3a3a3a;
 }
 
 #categories nav ul {
@@ -38,7 +39,7 @@
   text-decoration: none;
 }
 
-#last_games {
+#list_games {
   display: grid;
   grid-template-columns: 33% 33% 33%;
   gap: 20px;
@@ -47,8 +48,10 @@
 .game {
   display: grid;
   grid-template-columns: max-content auto;
-  margin: 16px 0;
+  margin: 10px 0;
   gap: 20px;
+  border-radius: 10px;
+  padding: 5px !important;
 }
 
 .game img {
@@ -56,21 +59,66 @@
   box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
 }
 
-.game #description p {
+figcaption p {
   margin: 0px;
 }
 
-.game #description p.name {
+figcaption p.name {
   font-weight: bold;
 }
 
-.game #description p.type {
+figcaption p.type {
   font-weight: 100;
   color: #3a3a3a;
 }
 
-.game #description p i {
+figcaption p i {
   font-size: 0.6rem;
   margin-left: 5px;
   opacity: 0.8;
+}
+
+.product_image_gallery {
+  width: 100%;
+}
+
+.game-information img {
+  width: 3vw !important;
+  box-shadow:0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
+}
+
+.game-information {
+  display: grid !important;
+  grid-template-columns: max-content auto;
+  margin: 10px 0px !important;
+  gap: 20px;
+}
+
+figure {
+  padding: 20px !important;
+}
+
+figure:hover, .game:hover {
+  background-color: #3a3a3a20;
+  cursor: pointer;
+}
+
+section#juego-destacado {
+  background-image: url('../../src/minecraft.webp');
+  min-height: 40vh;
+  background-size: cover;
+  border-radius: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-position: 50%;
+}
+
+section#juego-destacado h2 {
+  color: white;
+  text-transform: uppercase;
+}
+
+section{
+  margin: 50px 0px;
 }
