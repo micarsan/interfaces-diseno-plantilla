@@ -404,7 +404,6 @@ footer div>* {
     cursor: pointer;
 }
 
-.product-gallery.landscape div figure>img,
 .product-gallery.landscape div div>img,
 .product-gallery.portrait div div>img {
     width: 80vw;
