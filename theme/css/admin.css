@@ -129,6 +129,10 @@ header #userbox .userinfo ul li a {
     color: var(--theme-light-acent-color);
 }
 
+#content aside ul li>ul>li a {
+    padding-left: 20px;
+}
+
 #content aside div.button {
     grid-area: button;
     margin: auto;
