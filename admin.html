@@ -40,18 +40,58 @@
       </div>
     </header>
     <div id="content">
-      <aside class="active">
+      <aside>
         <h3>Administración</h3>
         <ul>
           <li><a href="#">Dashboard</a></li>
           <li><a href="#">Categorías</a></li>
-          <li><a href="#" class="active">Productos</a></li>
+          <li><a href="#" class="active">Aplicaciones</a></li>
           <li><a href="#">Gráficos de ventas</a></li>
-          <li><a href="#">asd</a></li>
         </ul>
+        <div class="button">&#10095;</div>
       </aside>
       <main>
-        Contenido
+        <section class="app-list">
+          <h2>Listado de aplicaciones</h2>
+          <div class="grid-list">
+            <figure>
+              <img src="media/images/aplicacion-ejemplo-1.webp">
+              <figcaption>
+                <p class="name">App de ejemplo 1</p>
+                <p class="type">Juegos carreras</p>
+                <p class="punctuation">3.4<span><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></span></p>
+              </figcaption>
+              <div class="over">
+                <a href="#"><i class="fas fa-edit"></i><span>Editar</span></a>
+                <a href="#"><i class="fas fa-edit"></i><span>Eliminar</span></a>
+              </div>
+            </figure>
+            <figure>
+              <img src="media/images/aplicacion-ejemplo-2.webp">
+              <figcaption>
+                <p class="name">App de ejemplo 2</p>
+                <p class="type">Juegos estrategia</p>
+                <p class="punctuation">4.2<span><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"><i class="far fa-star"></i></i></span></p>
+              </figcaption>
+              <div class="over">
+                <a href="#"><i class="fas fa-edit"></i><span>Editar</span></a>
+                <a href="#"><i class="fas fa-edit"></i><span>Eliminar</span></a>
+              </div>
+            </figure>
+            <figure>
+              <img src="media/images/aplicacion-ejemplo-3.webp">
+              <figcaption>
+                <p class="name">App de ejemplo 3</p>
+                <p class="type">Juegos aventuras</p>
+                <p class="punctuation">2.2<span><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></span></p>
+              </figcaption>
+              <div class="over">
+                <a href="#"><i class="fas fa-edit"></i><span>Editar</span></a>
+                <a href="#"><i class="fas fa-edit"></i><span>Eliminar</span></a>
+              </div>
+            </figure>
+          </div>
+        </section>
       </main>
     </div>
     <footer>
@@ -78,4 +118,5 @@
     </footer>
   </body>
   <script lang="text/javascript" src="theme/js/style.js"></script>
+  <script lang="text/javascript" src="theme/js/admin.js"></script>
 </html>
