@@ -16,7 +16,7 @@ header #userbox .userinfo .userimage {
     width: 200px;
     height: 200px;
     margin: auto;
-    margin-top: 30px;
+    margin-top: 5px;
     border: 4px solid white;
     outline: 3px solid rgba(var(--theme-light-acent-color_), 0.75); 
     box-shadow: 0 0px 10px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
@@ -31,4 +31,180 @@ header #userbox .userinfo h2 {
 header #userbox .userinfo .profile {
     margin-top:4px;
     text-align: center;
+}
+
+header #userbox .userinfo ul {
+    padding: 0px;
+    margin: 0px
+}
+header #userbox .userinfo ul li {
+    list-style: none;
+    margin-top: 10px;
+}
+header #userbox .userinfo ul li a {
+    text-decoration: none;
+    display: block;
+}
+
+#content {
+    display: grid;
+    grid-template-columns: 0px auto;
+    grid-gap: 0px;
+    grid-template-areas: 'aside main';
+}
+
+/* Menú lateral ASIDE */
+#content aside {
+    grid-area: aside;
+    position: absolute;
+    z-index: 1;
+    left: -200px;
+    top: 68px;
+    bottom: 0;
+    width: 220px;
+    background-color: #ccc;
+    transition: all 0.3s ease-in-out;
+    display: grid;
+    grid-template-columns: auto 20px;
+    grid-template-rows: 28px auto;
+    grid-gap: 0px;
+    grid-template-areas:
+        'title title'
+        'links button';
+    align-items: start;
+}
+#content aside.active {
+    left: 0px;
+}
+
+@media screen and (min-width: 570px) {
+    #content {
+        grid-template-columns: 220px auto;
+    }
+    
+    #content aside {
+        position: relative;
+        left: unset;
+        top: unset;
+        grid-template-areas:
+        'title title'
+        'links links';
+    }
+    #content aside div.button {
+        display: none;
+    }
+    #content main {
+        margin-left: 20px !important;
+    }
+    body>footer>div {
+        margin-left: 0px !important;
+    }
+}
+
+#content aside h3 {
+    grid-area: title;
+    text-align: center;
+    margin: 7px auto 2px;
+}
+
+#content aside ul {
+    grid-area: links;
+    margin: 0;
+    padding: 0;
+}
+
+#content aside ul li {
+    width: 100%;
+}
+
+#content aside ul li a {
+    display: block;
+    padding: 5px 10px;
+    text-decoration: none;
+}
+
+#content aside ul li a:hover,
+#content aside ul li a.active {
+    background-color: #999;
+    color: var(--theme-light-acent-color);
+}
+
+#content aside ul li>ul>li a {
+    padding-left: 20px;
+}
+
+#content aside div.button {
+    grid-area: button;
+    margin: auto;
+    padding: 20px 0;
+    cursor: pointer;
+}
+
+#content aside.active div.button {
+    transform: rotate(180deg);
+}
+
+/* Contenido MAIN */
+#content main {
+    grid-area: main;
+    max-width: fill-available;
+    max-width: -webkit-fill-available;
+    max-width: -moz-available;
+    margin: 20px;
+    margin-left: 40px;
+    padding: 0;
+}
+
+#content main section h2 {
+    text-align: center;
+}
+
+#content main .grid-list figure {
+    position: relative;
+}
+
+#content main .grid-list figure .over {
+    cursor: default;
+    display: none;
+    position:absolute;
+    left: 0px;
+    right: 0px;
+    top: 0px;
+    bottom: 0px;
+    border-radius: 8px;
+    grid-template-columns: 50% 50%;
+    align-items: stretch;
+    justify-items: stretch;
+}
+
+#content main .grid-list figure:hover .over,
+#content main .grid-list figure.hover .over {
+    display: grid;
+}
+
+#content main .grid-list figure .over a {
+    display: grid;
+    align-items: center;
+    justify-content: center;
+    align-content: stretch;
+    margin: 8px;
+    padding: 10px;
+    text-align: center;
+    border: 1px solid var(--theme-light-acent-color);
+    border-radius: 5px;
+    background-color: #444444cc;
+}
+
+#content main .grid-list figure .over a i {
+    font-size: 1.2em;
+}
+
+#content main .grid-list figure .over a * {
+    color: #eee;
+    display: block;
+}
+
+
+body>footer>div {
+    margin-left: 20px;
 }

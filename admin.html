@@ -6,6 +6,7 @@
     <title>Progressive Web Application Store - Área de administración</title>
     <link rel="stylesheet" href="theme/css/style.css?v1.1" />
     <link rel="stylesheet" href="theme/css/admin.css" />
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous" />
   </head>
   <body>
     <div id="overlay"> </div>
@@ -23,13 +24,11 @@
                 <h2>Miguel Carmona</h2>
                 <p class="profile">Administrador</p>
               </div>
-              <div class="links">
-                <ul>
-                  <li>Editar datos</li>
-                  <li>Detalles financieros</li>
-                  <li>Cerrar sesión</li>
-                </ul>
-              </div>
+              <ul>
+                <li><a href="#"><i class="fas fa-user-edit"></i> Editar datos</a></li>
+                <li><a href="#"><i class="fas fa-hand-holding-usd"></i> Detalles financieros</a></li>
+                <li><a href="#"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</a></li>
+              </ul>
             </section>
           </div>
         </div>
@@ -40,65 +39,65 @@
         <div> </div>
       </div>
     </header>
-    <section class="categories">
-      <nav>
+    <div id="content">
+      <aside>
+        <h3>Administración</h3>
         <ul>
-          <li><a href="product.html">Listado de categorías</a></li>
-          <li><a href="about_us.html"></a></li>
-          <li><a href="contact.html">Contacto</a></li>
-          <li><a class="active" href="template.html">Plantilla</a></li>
+          <li><a href="#">Dashboard</a></li>
+          <li><a href="#">Categorías</a></li>
+          <li><a href="#" class="active">Aplicaciones</a>
+            <ul>
+              <li><a>Añadir</a></li>
+            </ul>
+          </li>
+          <li><a href="#">Gráficos de ventas</a></li>
         </ul>
-      </nav>
-    </section>
-    <main>
-      <div><h1>Title h1</h1></div>
-      <div><h2>Title h2</h2></div>
-      <div><h3>Title h3</h3></div>
-      <div><h4>Title h4</h4></div>
-      <div><h5>Title h5</h5></div>
-      <div><button>button</button> <button class="light">button.light</button> <button class="clear">button.clear</button></div>
-      <div>
-        <p><span class="bold">Bold example:</span> Lorem <a href="\">link example</a> fistrum
-          <span class="italic">italic example</span> de la pradera <span class="underline">underline example</span>
-          fistro torpedo la caidita diodeno torpedo no puedor ese que llega la caidita.
-          Tiene musho peligro por la gloria de mi madre se calle ustée ese pedazo de qué dise usteer por la gloria de mi
-          madre mamaar apetecan sexuarl a wan hasta luego Lucas. Te va a hasé pupitaa tiene musho peligro papaar papaar
-          no puedor me cago en tus muelas diodeno se calle ustée.
-        </p>
-      </div>
-      <div>
-        <h3>Product gallery - Portrait</h3>
-        <div class="product-gallery portrait">
-          <button class="left">&#10132;</button>
-          <div>
-            <div><img src="template_examples/product-1/full-image1.webp" /></div>
-            <div><img src="template_examples/product-1/full-image2.webp" /></div>
-            <div><img src="template_examples/product-1/full-image3.webp" /></div>
-            <div><img src="template_examples/product-1/full-image4.webp" /></div>
-            <div><img src="template_examples/product-1/full-image5.webp" /></div>
-            <div><img src="template_examples/product-1/full-image6.webp" /></div>
-            <div><img src="template_examples/product-1/full-image7.webp" /></div>
+        <div class="button">&#10095;</div>
+      </aside>
+      <main>
+        <section class="app-list">
+          <h2>Listado de aplicaciones</h2>
+          <div class="grid-list">
+            <figure>
+              <img src="media/images/aplicacion-ejemplo-1.webp">
+              <figcaption>
+                <p class="name">App de ejemplo 1</p>
+                <p class="type">Juegos carreras</p>
+                <p class="punctuation">3.4<span><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></span></p>
+              </figcaption>
+              <div class="over">
+                <a href="#"><i class="fas fa-edit"></i><span>Editar</span></a>
+                <a href="#"><i class="fas fa-edit"></i><span>Eliminar</span></a>
+              </div>
+            </figure>
+            <figure>
+              <img src="media/images/aplicacion-ejemplo-2.webp">
+              <figcaption>
+                <p class="name">App de ejemplo 2</p>
+                <p class="type">Juegos estrategia</p>
+                <p class="punctuation">4.2<span><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"><i class="far fa-star"></i></i></span></p>
+              </figcaption>
+              <div class="over">
+                <a href="#"><i class="fas fa-edit"></i><span>Editar</span></a>
+                <a href="#"><i class="fas fa-edit"></i><span>Eliminar</span></a>
+              </div>
+            </figure>
+            <figure>
+              <img src="media/images/aplicacion-ejemplo-3.webp">
+              <figcaption>
+                <p class="name">App de ejemplo 3</p>
+                <p class="type">Juegos aventuras</p>
+                <p class="punctuation">2.2<span><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></span></p>
+              </figcaption>
+              <div class="over">
+                <a href="#"><i class="fas fa-edit"></i><span>Editar</span></a>
+                <a href="#"><i class="fas fa-edit"></i><span>Eliminar</span></a>
+              </div>
+            </figure>
           </div>
-          <button class="right">&#10132;</button>
-        </div>
-      </div>
-      <div>
-        <h3>Product gallery - landscape</h3>
-        <div class="product-gallery landscape">
-          <button class="left">&#10132;</button>
-          <div>
-            <div><img src="template_examples/product-2/full-image1.webp" /></div>
-            <div><img src="template_examples/product-2/full-image2.webp" /></div>
-            <div><img src="template_examples/product-2/full-image3.webp" /></div>
-            <div><img src="template_examples/product-2/full-image4.webp" /></div>
-            <div><img src="template_examples/product-2/full-image5.webp" /></div>
-            <div><img src="template_examples/product-2/full-image6.webp" /></div>
-          </div>
-          <button class="right">&#10132;</button>
-        </div>
-      </div>
-      <p> </p>
-    </main>
+        </section>
+      </main>
+    </div>
     <footer>
       <div>
         <div>
@@ -123,4 +122,5 @@
     </footer>
   </body>
   <script lang="text/javascript" src="theme/js/style.js"></script>
+  <script lang="text/javascript" src="theme/js/admin.js"></script>
 </html>
