@@ -199,7 +199,7 @@ header #userbox .userinfo ul li a {
     margin: 8px;
     padding: 10px;
     text-align: center;
-    border: 1px solid var(--theme-light-acent-color);
+    border: 2px solid #eee;
     border-radius: 5px;
     background-color: #444444cc;
 }
