@@ -1,5 +1,5 @@
 body {
-    margin-top: 68px;
+    margin-top: 63px;
 }
 
 header {
@@ -67,14 +67,14 @@ header #userbox .userinfo ul li a {
     position: fixed;
     z-index: 1;
     left: -200px;
-    top: 65px;
+    top: 63px;
     bottom: 0px;
     width: 220px;
     background-color: #ccc;
     transition: all 0.3s ease-in-out;
     display: grid;
     grid-template-columns: auto 20px;
-    grid-template-rows: 28px auto;
+    grid-template-rows: 40px auto;
     grid-gap: 0px;
     grid-template-areas:
         'title button'
@@ -85,10 +85,17 @@ header #userbox .userinfo ul li a {
     left: 0px;
 }
 
-#content aside h3 {
+#content aside .title {
     grid-area: title;
     text-align: center;
-    margin: 7px auto 2px;
+    background-color: #99999966;
+    width: fit-content;
+    width: -webkit-fill-available;
+    width: -moz-available;
+
+}
+#content aside .title h3 {
+    margin: 8px auto 2px;
 }
 
 #content aside ul {
