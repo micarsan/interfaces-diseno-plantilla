@@ -151,6 +151,9 @@ section{
 
 }
 
+/**
+* RESPONSIVE
+**/
 
 @media only screen and (max-width: 850px) {
   #list_games {
