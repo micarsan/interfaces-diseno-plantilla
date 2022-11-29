@@ -77,36 +77,12 @@ header #userbox .userinfo ul li a {
     grid-template-rows: 28px auto;
     grid-gap: 0px;
     grid-template-areas:
-        'title title'
+        'title button'
         'links button';
     align-items: start;
 }
 #content aside.active {
     left: 0px;
-}
-
-@media screen and (min-width: 570px) {
-    #content {
-        grid-template-columns: 220px auto;
-    }
-    
-    #content aside {
-        position: relative;
-        left: unset;
-        top: unset;
-        grid-template-areas:
-        'title title'
-        'links links';
-    }
-    #content aside div.button {
-        display: none;
-    }
-    #content main {
-        margin-left: 20px !important;
-    }
-    body>footer>div {
-        margin-left: 0px !important;
-    }
 }
 
 #content aside h3 {
@@ -131,9 +107,12 @@ header #userbox .userinfo ul li a {
     text-decoration: none;
 }
 
-#content aside ul li a:hover,
-#content aside ul li a.active {
+#content aside ul li:hover>a,
+#content aside ul li.active>a {
     background-color: #999;
+}
+#content aside ul li:hover>a:hover,
+#content aside ul li.active>a {
     color: var(--theme-light-acent-color);
 }
 
@@ -143,13 +122,23 @@ header #userbox .userinfo ul li a {
 
 #content aside div.button {
     grid-area: button;
+    display: grid;
     margin: auto;
-    padding: 20px 0;
     cursor: pointer;
+    width: fill-available;
+    width: -webkit-fill-available;
+    width: -moz-available;
+    height: fill-available;
+    height: -webkit-fill-available;
+    height: -moz-available;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease-in-out;
+    background-color: #99999966;
 }
 
 #content aside.active div.button {
-    transform: rotate(180deg);
+    transform: scaleX(-1);
 }
 
 /* Contenido MAIN */
@@ -222,4 +211,28 @@ header #userbox .userinfo ul li a {
 
 body>footer>div {
     margin-left: 20px;
+}
+
+@media screen and (min-width: 570px) {
+    #content {
+        grid-template-columns: 220px auto;
+    }
+    
+    #content aside {
+        position: relative;
+        left: unset;
+        top: unset;
+        grid-template-areas:
+        'title title'
+        'links links';
+    }
+    #content aside div.button {
+        display: none;
+    }
+    #content main {
+        margin-left: 20px;
+    }
+    body>footer>div {
+        margin-left: 0px;
+    }
 }
