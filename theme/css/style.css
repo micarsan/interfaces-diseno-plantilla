@@ -499,7 +499,7 @@ footer div>* {
 .grid-list {
     display: grid;
     grid-template-columns: 100%;
-    gap: 0px;
+    gap: 15px 5px;
 }
   
 .grid-list figure {
