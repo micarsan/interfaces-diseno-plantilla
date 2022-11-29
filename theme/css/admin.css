@@ -16,7 +16,7 @@ header #userbox .userinfo .userimage {
     width: 200px;
     height: 200px;
     margin: auto;
-    margin-top: 30px;
+    margin-top: 5px;
     border: 4px solid white;
     outline: 3px solid rgba(var(--theme-light-acent-color_), 0.75); 
     box-shadow: 0 0px 10px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
@@ -32,3 +32,79 @@ header #userbox .userinfo .profile {
     margin-top:4px;
     text-align: center;
 }
+
+header #userbox .userinfo ul {
+    padding: 0px;
+    margin: 0px
+}
+header #userbox .userinfo ul li {
+    list-style: none;
+    margin-top: 10px;
+}
+header #userbox .userinfo ul li a {
+    text-decoration: none;
+    display: block;
+}
+
+#content {
+    display: flex;
+    flex-wrap: nowrap;
+    justify-content: flex-start;
+    align-content: stretch;
+}
+
+/* Menú lateral ASIDE */
+#content aside {
+    position: absolute;
+    left: -80vw;
+    top: 65px;
+    bottom: 0;
+    width: 250px;
+    background-color: #ccc;
+    transition: all 0.3s ease-in-out;
+}
+
+#content aside.active {
+    left: 0px;
+}
+
+@media screen and (min-width: 570px) {
+    #content aside {
+        position: relative;
+        left: unset;
+        top: unset;
+    }   
+}
+
+#content aside h3 {
+    text-align: center;
+    margin: 7px auto 2px;
+}
+
+#content aside ul {
+    margin: 0;
+    padding: 0;
+}
+
+#content aside ul li {
+    width: 100%;
+}
+
+#content aside ul li a {
+    display: block;
+    padding: 5px 10px;
+    text-decoration: none;
+}
+
+#content aside ul li a:hover,
+#content aside ul li a.active {
+    background-color: #999;
+    color: var(--theme-light-acent-color);
+}
+
+/* Contenido MAIN */
+#content main {
+    width: 100vw;
+    max-width: 100vw;
+}
+

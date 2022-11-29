@@ -23,6 +23,7 @@ html {
 body {
     margin: 0;
     color: var(--theme-light-font-color);
+    min-width: 360px;
 }
 
 a {
@@ -253,9 +254,11 @@ header #userbox>div {
     position: absolute;
     z-index: -1;
     top: -200px;
-    right: 5vw;
-    width: 80vw;
-    padding: 20px;
+    right: 0;
+    min-width: 210px;
+    width: 50vw;
+    max-width: 300px;
+    padding: 25px;
     cursor: auto;
     transition: opacity 0.2s cubic-bezier(0.21, 0.72, 0.16, 1.02), top 0.4s cubic-bezier(0.02, 1, 0.75, 0.98);
     background-color: #eee;
@@ -496,14 +499,6 @@ footer div>* {
 
 /* -- Media queries -- */
 @media screen and (min-width: 516px) {
-    .product-gallery.landscape div div>img {
-        width: 400px;
-    }
-
-    .product-gallery.portrait div div>img {
-        width: 200px;
-    }
-
     header .header_top h1 {
         font-size: 1.5em;
     }
@@ -514,17 +509,7 @@ footer div>* {
         width: 30%;
     }
 
-    header #userbox>div {
-        right: 25px;
-        width: 300px;
-    }
-
     header .header_top h1 {
         font-size: 1.8em;
-    }
-
-    header #searchbox input:focus,
-    header #searchbox input:focus-visible {
-        margin-right: 15vw;
     }
 }
