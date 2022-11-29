@@ -159,7 +159,7 @@ header .search_and_user {
 header .header_top h1 {
     width: -webkit-fill-available;
     margin: 0;
-    margin-top: 14px;
+    margin-top: 8px;
     font-size: 1.2em;
     color: rgba(var(--theme-light-font-color_), 0.8);
     transition: all 0.5s ease-in-out;
@@ -176,7 +176,7 @@ header .search_and_user {
 
 header .header_top .logo,
 header .search_and_user .logo {
-    padding: 10px 20px 0 20px;
+    padding: 6px 20px 0 20px;
 }
 
 header .search_and_user .logo {
