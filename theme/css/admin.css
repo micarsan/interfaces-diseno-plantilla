@@ -195,6 +195,13 @@ header #userbox .userinfo ul li a {
     background-color: #444444cc;
 }
 
+#content main .grid-list figure .over a:first-child {
+    margin-right: 4px;
+}
+#content main .grid-list figure .over a:last-child {
+    margin-left: 4px;
+}
+
 #content main .grid-list figure .over a i {
     font-size: 1.2em;
 }
