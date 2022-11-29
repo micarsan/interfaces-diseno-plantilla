@@ -186,7 +186,7 @@ header #userbox .userinfo ul li a {
     display: grid;
     align-items: center;
     justify-content: center;
-    align-content: stretch;
+    align-content: space-between;
     margin: 8px;
     padding: 10px;
     text-align: center;
