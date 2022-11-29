@@ -69,11 +69,11 @@ header #userbox .userinfo ul li a {
     left: -200px;
     top: 63px;
     bottom: 0px;
-    width: 220px;
+    width: 225px;
     background-color: #ccc;
     transition: all 0.3s ease-in-out;
     display: grid;
-    grid-template-columns: auto 20px;
+    grid-template-columns: auto 25px;
     grid-template-rows: 40px auto;
     grid-gap: 0px;
     grid-template-areas:
