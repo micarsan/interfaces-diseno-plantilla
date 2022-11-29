@@ -139,6 +139,15 @@ input.clear:hover {
 }
 
 /* -- Header -- */
+header {
+    z-index: 1;
+    position: relative;
+    width: 100%;
+    width: fit-content;
+    width: -webkit-fill-available;
+    max-width: -moz-available;
+}
+
 header .header_top,
 header .search_and_user {
     display: flex;

@@ -1,5 +1,12 @@
+body {
+    margin-top: 68px;
+}
+
 header {
     background-color: #ccc;
+    position: fixed;
+    top: 0;
+    z-index: 2;
 }
 
 header #userbox,
@@ -51,16 +58,17 @@ header #userbox .userinfo ul li a {
     grid-template-columns: 0px auto;
     grid-gap: 0px;
     grid-template-areas: 'aside main';
+    position: relative;
 }
 
 /* Menú lateral ASIDE */
 #content aside {
     grid-area: aside;
-    position: absolute;
+    position: fixed;
     z-index: 1;
     left: -200px;
     top: 68px;
-    bottom: 0;
+    bottom: 0px;
     width: 220px;
     background-color: #ccc;
     transition: all 0.3s ease-in-out;
