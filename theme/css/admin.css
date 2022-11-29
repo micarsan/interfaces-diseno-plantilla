@@ -1,5 +1,5 @@
 body {
-    margin-top: 58px;
+    margin-top: 60px;
 }
 
 header {
@@ -67,7 +67,7 @@ header #userbox .userinfo ul li a {
     position: fixed;
     z-index: 1;
     left: -200px;
-    top: 63px;
+    top: 60px;
     bottom: 0px;
     width: 225px;
     background-color: #ccc;
