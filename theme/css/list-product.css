@@ -122,3 +122,15 @@ section#juego-destacado h2 {
 section{
   margin: 50px 0px;
 }
+
+@media only screen and (max-width: 850px) {
+  #list_games {
+    grid-template-columns: 50% 50%;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  #list_games {
+    grid-template-columns: 100%;
+  }
+}
