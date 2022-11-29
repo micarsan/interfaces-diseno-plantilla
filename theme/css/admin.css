@@ -88,7 +88,6 @@ header #userbox .userinfo ul li a {
 #content aside .title {
     grid-area: title;
     text-align: center;
-    background-color: #99999966;
     width: fit-content;
     width: -webkit-fill-available;
     width: -moz-available;
