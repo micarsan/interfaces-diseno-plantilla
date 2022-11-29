@@ -92,6 +92,11 @@ header #userbox .userinfo ul li a {
     width: fit-content;
     width: -webkit-fill-available;
     width: -moz-available;
+    height: fit-content;
+    height: -webkit-fill-available;
+    height: -moz-available;
+    display: flex;
+    align-items: center;
 
 }
 #content aside .title h3 {
@@ -110,7 +115,7 @@ header #userbox .userinfo ul li a {
 
 #content aside ul li a {
     display: block;
-    padding: 5px 10px;
+    padding: 8px 10px;
     text-decoration: none;
 }
 
