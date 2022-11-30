@@ -518,6 +518,7 @@ footer div>* {
 }
   
 .grid-list figure img {
+    width: 64px;
     border-radius: 10px;
     box-shadow: 0 1px 2px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
 }
@@ -526,12 +527,16 @@ footer div>* {
     margin: 0px;
 }
 
-.grid-list figure figcaption p.name {
-    font-weight: bold;
+.grid-list figure figcaption h4 {
+    margin: 0px;
+    font-weight: 600;
+    font-size: 1em;
 }
 
-.grid-list figure figcaption p.type {
+.grid-list figure figcaption h5 {
+    margin: 0px;
     font-weight: 100;
+    font-size: 1em;
     color: #3a3a3a;
 }
 
