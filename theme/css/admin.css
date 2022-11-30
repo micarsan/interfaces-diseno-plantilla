@@ -16,7 +16,7 @@ header #userbox .userinfo .userimage {
 }
 
 header #userbox {
-    background-image: url('../../media/images/user_avatar_min.webp');
+    background-image: url('../../media/images/users/user-1/avatar_min.webp');
 }
 
 header #userbox .userinfo .userimage {
@@ -27,7 +27,7 @@ header #userbox .userinfo .userimage {
     border: 4px solid white;
     outline: 3px solid rgba(var(--theme-light-acent-color_), 0.75); 
     box-shadow: 0 0px 10px 0 rgb(60 64 67 / 30%), 0 1px 3px 1px rgb(60 64 67 / 15%);
-    background-image: url('../../media/images/user_avatar.webp');
+    background-image: url('../../media/images/users/user-1/avatar.webp');
 }
 
 header #userbox .userinfo h2 {
