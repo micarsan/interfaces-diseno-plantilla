@@ -31,9 +31,13 @@ window.addEventListener("load", function () {
 
 
     // User loging box
-    document.querySelector('header #userbox').addEventListener('click', function () {
+    document.querySelector('header #userbox').addEventListener('click', function (event) {
+        
+        // Evitamos la herencia en los hijos
+        if (document.querySelector('header #userbox') !== event.target) return;
+        
         this.classList.toggle('active');
-    });
+    } );
 
 
     // product gallery
