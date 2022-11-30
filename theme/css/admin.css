@@ -102,35 +102,6 @@ header #userbox .userinfo ul li a {
     margin: 8px auto 2px;
 }
 
-#content aside ul {
-    grid-area: links;
-    margin: 0;
-    padding: 0;
-}
-
-#content aside ul li {
-    width: 100%;
-}
-
-#content aside ul li a {
-    display: block;
-    padding: 8px 10px;
-    text-decoration: none;
-}
-
-#content aside ul li:hover>a,
-#content aside ul li.active>a {
-    background-color: #999;
-}
-#content aside ul li:hover>a:hover,
-#content aside ul li.active>a {
-    color: var(--theme-light-acent-color);
-}
-
-#content aside ul li>ul>li a {
-    padding-left: 20px;
-}
-
 #content aside div.button {
     grid-area: button;
     display: grid;
@@ -167,57 +138,6 @@ header #userbox .userinfo ul li a {
     text-align: center;
 }
 
-#content main .grid-list figure {
-    position: relative;
-}
-
-#content main .grid-list figure .over {
-    cursor: default;
-    display: none;
-    position:absolute;
-    left: 0px;
-    right: 0px;
-    top: 0px;
-    bottom: 0px;
-    border-radius: 8px;
-    grid-template-columns: 50% 50%;
-    align-items: stretch;
-    justify-items: stretch;
-}
-
-#content main .grid-list figure:hover .over,
-#content main .grid-list figure.hover .over {
-    display: grid;
-}
-
-#content main .grid-list figure .over a {
-    display: grid;
-    align-items: center;
-    justify-content: center;
-    align-content: space-around;
-    margin: 8px;
-    padding: 10px;
-    text-align: center;
-    border: 2px solid #eee;
-    border-radius: 5px;
-    background-color: #444444cc;
-}
-
-#content main .grid-list figure .over a:first-child {
-    margin-right: 4px;
-}
-#content main .grid-list figure .over a:last-child {
-    margin-left: 4px;
-}
-
-#content main .grid-list figure .over a i {
-    font-size: 1.2em;
-}
-
-#content main .grid-list figure .over a * {
-    color: #eee;
-    display: block;
-}
 
 
 body>footer>div {

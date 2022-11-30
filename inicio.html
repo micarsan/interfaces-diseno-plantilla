@@ -1,129 +1,578 @@
 <!DOCTYPE html>
 <html lang="es">
-  <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Progressive Web Application Store</title>
-    <link rel="stylesheet" href="theme/css/style.css" />
-  </head>
-  <body>
-    <div id="overlay"> </div>
-    <header>
-      <div class="search_and_user">
-        <div class="logo"><img src="theme/img/headerlogo.webp" width="64" /></div>
-        <div id="searchbox">
-          <form><input type="text" name="search" placeholder="" autocomplete="off" /></form>
-        </div>
-        <div id="userbox">
-          <div>
-            <fieldset>
-              <legend>login</legend>
-              <form>
-                <div>
-                  <label for="user">User:</label>
-                  <input type="text" id="user" />
-                </div>
-                <div>
-                  <label for="password">Password:</label>
-                  <input type="password" id="password" />
-                </div>
-                <div>
-                  <input class="light" type="submit" value="Sign in" />
-                  <input class="light" type="submit" value="PSW recovery" />
-                </div>
-              </form>
-            </fieldset>
-            <div><a href="">No account? Click for new user.</a></div>
-          </div>
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Progressive Web Application Store</title>
+  <link rel="stylesheet" href="theme/css/style.css" />
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css"
+    integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous" />
+
+</head>
+
+<body>
+  <div id="overlay"> </div>
+  <header>
+    <div class="search_and_user">
+      <div class="logo"><img src="theme/img/headerlogo.webp" width="64" /></div>
+      <div id="searchbox">
+        <form><input type="text" name="search" placeholder="" autocomplete="off" /></form>
+      </div>
+      <div id="userbox">
+        <div>
+          <fieldset>
+            <legend>login</legend>
+            <form>
+              <div>
+                <label for="user">User:</label>
+                <input type="text" id="user" />
+              </div>
+              <div>
+                <label for="password">Password:</label>
+                <input type="password" id="password" />
+              </div>
+              <div>
+                <input class="light" type="submit" value="Sign in" />
+                <input class="light" type="submit" value="PSW recovery" />
+              </div>
+            </form>
+          </fieldset>
+          <div><a href="">No account? Click for new user.</a></div>
         </div>
       </div>
-      <div class="header_top">
-        <div class="logo"><img src="theme/img/headerlogo.webp" width="64" /></div>
-        <h1>Progressive Web App Store</h1>
-        <div> </div>
+    </div>
+    <div class="header_top">
+      <div class="logo"><img src="theme/img/headerlogo.webp" width="64" /></div>
+      <h1>Progressive Web App Store</h1>
+      <div> </div>
+    </div>
+  </header>
+  <section class="categories">
+    <nav>
+      <ul>
+        <li><a class="active" href="inicio.html">Inicio</a></li>
+        <li><a href="#">Ocio</a></li>
+        <li><a href="#">Productividad</a></li>
+        <li><a href="#">Utilidades</a></li>
+        <li><a href="#">Deportes y apuestas</a></li>
+        <li><a href="#">Juegos</a></li>
+      </ul>
+    </nav>
+  </section>
+  <main>
+    <section>
+      <h2 class="margin-bottom-15px">Más descargadas</h2>
+      <div class="margin-bottom-30px margin-betwen-20px">
+        <button class="light rounded">Último mes</button>
+        <button class="clear rounded">Todo el año</button>
+        <button class="clear rounded">desde siempre</button>
       </div>
-    </header>
-    <section class="categories">
-      <nav>
-        <ul>
-          <li><a href="product.html">Ficha App</a></li>
-          <li><a href="about_us.html">Sobre nosotros</a></li>
-          <li><a href="contact.html">Contacto</a></li>
-          <li><a class="active" href="template.html">Plantilla</a></li>
-        </ul>
-      </nav>
+      <div class="grid-list">
+        <figure class="app-small-detailed">
+          <img src="media/images/apps/aplicacion-ejemplo-1/icon.webp">
+          <figcaption>
+            <h4>App de ejemplo 1</h4>
+            <h5>Juegos carreras</h5>
+            <p class="punctuation">3.4<span><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                  class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></span></p>
+          </figcaption>
+        </figure>
+        <figure class="app-small-detailed">
+          <img src="media/images/apps/aplicacion-ejemplo-2/icon.webp">
+          <figcaption>
+            <h4>App de ejemplo 2</h4>
+            <h5>Resultados deportivos</h5>
+            <p class="punctuation">4.2<span><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                  class="fas fa-star"></i><i class="fas fa-star"><i class="far fa-star"></i></i></span></p>
+          </figcaption>
+        </figure>
+        <figure class="app-small-detailed">
+          <img src="media/images/apps/aplicacion-ejemplo-3/icon.webp">
+          <figcaption>
+            <h4>App de ejemplo 3</h4>
+            <h5>Juegos estrategia</h5>
+            <p class="punctuation">2.2<span><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                  class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></span></p>
+          </figcaption>
+        </figure>
+        <figure class="app-small-detailed">
+          <img src="media/images/apps/aplicacion-ejemplo-4/icon.webp">
+          <figcaption>
+            <h4>App de ejemplo 4</h4>
+            <h5>Utilidades navegación</h5>
+            <p class="punctuation">1.8<span><i class="fas fa-star"></i><i class="far fa-star"></i><i
+                  class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></span></p>
+          </figcaption>
+        </figure>
+        <figure class="app-small-detailed">
+          <img src="media/images/apps/aplicacion-ejemplo-1/icon.webp">
+          <figcaption>
+            <h4>App de ejemplo 1</h4>
+            <h5>Juegos carreras</h5>
+            <p class="punctuation">3.4<span><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></span></p>
+          </figcaption>
+        </figure>
+        <figure class="app-small-detailed">
+          <img src="media/images/apps/aplicacion-ejemplo-2/icon.webp">
+          <figcaption>
+            <h4>App de ejemplo 2</h4>
+            <h5>Resultados deportivos</h5>
+            <p class="punctuation">4.2<span><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                  class="fas fa-star"></i><i class="fas fa-star"><i class="far fa-star"></i></i></span></p>
+          </figcaption>
+        </figure>
+      </div>
+      <div class="product-gallery margin-top-30px margin-bottom-30px">
+        <button class="left">&#10132;</button>
+        <div>
+          <figure class="app-small-detailed">
+            <img src="media/images/apps/aplicacion-ejemplo-1/full-image.webp">
+            <div class="information">
+              <img src="media/images/apps/aplicacion-ejemplo-1/icon.webp">
+              <figcaption>
+                <h4>App de ejemplo 1</h4>
+                <h5>Juegos carreras</h5>
+                <p class="punctuation">3.4<span><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                      class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></span></p>
+              </figcaption>
+            </div>
+          </figure>
+          <figure class="app-small-detailed">
+            <img src="media/images/apps/aplicacion-ejemplo-2/full-image.webp">
+            <div class="information">
+              <img src="media/images/apps/aplicacion-ejemplo-2/icon.webp">
+              <figcaption>
+                <h4>App de ejemplo 2</h4>
+                <h5>Juegos carreras</h5>
+                <p class="punctuation">3.4<span><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                      class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></span></p>
+              </figcaption>
+            </div>
+          </figure>
+          <figure class="app-small-detailed">
+            <img src="media/images/apps/aplicacion-ejemplo-3/full-image.webp">
+            <div class="information">
+              <img src="media/images/apps/aplicacion-ejemplo-3/icon.webp">
+              <figcaption>
+                <h4>App de ejemplo 3</h4>
+                <h5>Juegos carreras</h5>
+                <p class="punctuation">3.4<span><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                      class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></span></p>
+              </figcaption>
+            </div>
+          </figure>
+          <figure class="app-small-detailed">
+            <img src="media/images/apps/aplicacion-ejemplo-4/full-image.webp">
+            <div class="information">
+              <img src="media/images/apps/aplicacion-ejemplo-4/icon.webp">
+              <figcaption>
+                <h4>App de ejemplo 4</h4>
+                <h5>Juegos carreras</h5>
+                <p class="punctuation">3.4<span><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                      class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></span></p>
+              </figcaption>
+            </div>
+          </figure>
+          <figure class="app-small-detailed">
+            <img src="media/images/apps/aplicacion-ejemplo-1/full-image.webp">
+            <div class="information">
+              <img src="media/images/apps/aplicacion-ejemplo-1/icon.webp">
+              <figcaption>
+                <h4>App de ejemplo 1</h4>
+                <h5>Juegos carreras</h5>
+                <p class="punctuation">3.4<span><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                      class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></span></p>
+              </figcaption>
+            </div>
+          </figure>
+          <figure class="app-small-detailed">
+            <img src="media/images/apps/aplicacion-ejemplo-2/full-image.webp">
+            <div class="information">
+              <img src="media/images/apps/aplicacion-ejemplo-2/icon.webp">
+              <figcaption>
+                <h4>App de ejemplo 2</h4>
+                <h5>Juegos carreras</h5>
+                <p class="punctuation">3.4<span><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                      class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></span></p>
+              </figcaption>
+            </div>
+          </figure>
+          <figure class="app-small-detailed">
+            <img src="media/images/apps/aplicacion-ejemplo-3/full-image.webp">
+            <div class="information">
+              <img src="media/images/apps/aplicacion-ejemplo-3/icon.webp">
+              <figcaption>
+                <h4>App de ejemplo 3</h4>
+                <h5>Juegos carreras</h5>
+                <p class="punctuation">3.4<span><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                      class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></span></p>
+              </figcaption>
+            </div>
+          </figure>
+          <figure class="app-small-detailed">
+            <img src="media/images/apps/aplicacion-ejemplo-4/full-image.webp">
+            <div class="information">
+              <img src="media/images/apps/aplicacion-ejemplo-4/icon.webp">
+              <figcaption>
+                <h4>App de ejemplo 4</h4>
+                <h5>Juegos carreras</h5>
+                <p class="punctuation">3.4<span><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                      class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></span></p>
+              </figcaption>
+            </div>
+          </figure>
+        </div>
+        <button class="right">&#10132;</button>
     </section>
-    <main>
-      <div><h1>Title h1</h1></div>
-      <div><h2>Title h2</h2></div>
-      <div><h3>Title h3</h3></div>
-      <div><h4>Title h4</h4></div>
-      <div><h5>Title h5</h5></div>
-      <div><button>button</button> <button class="light">button.light</button> <button class="clear">button.clear</button></div>
+    <section class="margin-top-60px">
+      <h2 class="margin-bottom-15px">Mejores valoradas</h2>
+      <div class="margin-bottom-30px margin-betwen-20px">
+        <button class="light rounded">Último mes</button>
+        <button class="clear rounded">Todo el año</button>
+        <button class="clear rounded">desde siempre</button>
+      </div>
+      <div class="grid-list">
+        <figure class="app-small-detailed">
+          <img src="media/images/apps/aplicacion-ejemplo-1/icon.webp">
+          <figcaption>
+            <h4>App de ejemplo 1</h4>
+            <h5>Juegos carreras</h5>
+            <p class="punctuation">3.4<span><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                  class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></span></p>
+          </figcaption>
+        </figure>
+        <figure class="app-small-detailed">
+          <img src="media/images/apps/aplicacion-ejemplo-2/icon.webp">
+          <figcaption>
+            <h4>App de ejemplo 2</h4>
+            <h5>Resultados deportivos</h5>
+            <p class="punctuation">4.2<span><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                  class="fas fa-star"></i><i class="fas fa-star"><i class="far fa-star"></i></i></span></p>
+          </figcaption>
+        </figure>
+        <figure class="app-small-detailed">
+          <img src="media/images/apps/aplicacion-ejemplo-3/icon.webp">
+          <figcaption>
+            <h4>App de ejemplo 3</h4>
+            <h5>Juegos estrategia</h5>
+            <p class="punctuation">2.2<span><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                  class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></span></p>
+          </figcaption>
+        </figure>
+        <figure class="app-small-detailed">
+          <img src="media/images/apps/aplicacion-ejemplo-4/icon.webp">
+          <figcaption>
+            <h4>App de ejemplo 4</h4>
+            <h5>Utilidades navegación</h5>
+            <p class="punctuation">1.8<span><i class="fas fa-star"></i><i class="far fa-star"></i><i
+                  class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></span></p>
+          </figcaption>
+        </figure>
+        <figure class="app-small-detailed">
+          <img src="media/images/apps/aplicacion-ejemplo-1/icon.webp">
+          <figcaption>
+            <h4>App de ejemplo 1</h4>
+            <h5>Juegos carreras</h5>
+            <p class="punctuation">3.4<span><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></span></p>
+          </figcaption>
+        </figure>
+        <figure class="app-small-detailed">
+          <img src="media/images/apps/aplicacion-ejemplo-2/icon.webp">
+          <figcaption>
+            <h4>App de ejemplo 2</h4>
+            <h5>Resultados deportivos</h5>
+            <p class="punctuation">4.2<span><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                  class="fas fa-star"></i><i class="fas fa-star"><i class="far fa-star"></i></i></span></p>
+          </figcaption>
+        </figure>
+      </div>
+      <div class="product-gallery margin-top-30px margin-bottom-30px">
+        <button class="left">&#10132;</button>
+        <div>
+          <figure class="app-small-detailed">
+            <img src="media/images/apps/aplicacion-ejemplo-1/full-image.webp">
+            <div class="information">
+              <img src="media/images/apps/aplicacion-ejemplo-1/icon.webp">
+              <figcaption>
+                <h4>App de ejemplo 1</h4>
+                <h5>Juegos carreras</h5>
+                <p class="punctuation">3.4<span><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                      class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></span></p>
+              </figcaption>
+            </div>
+          </figure>
+          <figure class="app-small-detailed">
+            <img src="media/images/apps/aplicacion-ejemplo-2/full-image.webp">
+            <div class="information">
+              <img src="media/images/apps/aplicacion-ejemplo-2/icon.webp">
+              <figcaption>
+                <h4>App de ejemplo 2</h4>
+                <h5>Juegos carreras</h5>
+                <p class="punctuation">3.4<span><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                      class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></span></p>
+              </figcaption>
+            </div>
+          </figure>
+          <figure class="app-small-detailed">
+            <img src="media/images/apps/aplicacion-ejemplo-3/full-image.webp">
+            <div class="information">
+              <img src="media/images/apps/aplicacion-ejemplo-3/icon.webp">
+              <figcaption>
+                <h4>App de ejemplo 3</h4>
+                <h5>Juegos carreras</h5>
+                <p class="punctuation">3.4<span><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                      class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></span></p>
+              </figcaption>
+            </div>
+          </figure>
+          <figure class="app-small-detailed">
+            <img src="media/images/apps/aplicacion-ejemplo-4/full-image.webp">
+            <div class="information">
+              <img src="media/images/apps/aplicacion-ejemplo-4/icon.webp">
+              <figcaption>
+                <h4>App de ejemplo 4</h4>
+                <h5>Juegos carreras</h5>
+                <p class="punctuation">3.4<span><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                      class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></span></p>
+              </figcaption>
+            </div>
+          </figure>
+          <figure class="app-small-detailed">
+            <img src="media/images/apps/aplicacion-ejemplo-1/full-image.webp">
+            <div class="information">
+              <img src="media/images/apps/aplicacion-ejemplo-1/icon.webp">
+              <figcaption>
+                <h4>App de ejemplo 1</h4>
+                <h5>Juegos carreras</h5>
+                <p class="punctuation">3.4<span><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                      class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></span></p>
+              </figcaption>
+            </div>
+          </figure>
+          <figure class="app-small-detailed">
+            <img src="media/images/apps/aplicacion-ejemplo-2/full-image.webp">
+            <div class="information">
+              <img src="media/images/apps/aplicacion-ejemplo-2/icon.webp">
+              <figcaption>
+                <h4>App de ejemplo 2</h4>
+                <h5>Juegos carreras</h5>
+                <p class="punctuation">3.4<span><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                      class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></span></p>
+              </figcaption>
+            </div>
+          </figure>
+          <figure class="app-small-detailed">
+            <img src="media/images/apps/aplicacion-ejemplo-3/full-image.webp">
+            <div class="information">
+              <img src="media/images/apps/aplicacion-ejemplo-3/icon.webp">
+              <figcaption>
+                <h4>App de ejemplo 3</h4>
+                <h5>Juegos carreras</h5>
+                <p class="punctuation">3.4<span><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                      class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></span></p>
+              </figcaption>
+            </div>
+          </figure>
+          <figure class="app-small-detailed">
+            <img src="media/images/apps/aplicacion-ejemplo-4/full-image.webp">
+            <div class="information">
+              <img src="media/images/apps/aplicacion-ejemplo-4/icon.webp">
+              <figcaption>
+                <h4>App de ejemplo 4</h4>
+                <h5>Juegos carreras</h5>
+                <p class="punctuation">3.4<span><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                      class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></span></p>
+              </figcaption>
+            </div>
+          </figure>
+        </div>
+        <button class="right">&#10132;</button>
+    </section>
+    <section class="margin-top-60px">
+      <h2 class="margin-bottom-15px">Novedades</h2>
+      <div class="grid-list">
+        <figure class="app-small-detailed">
+          <img src="media/images/apps/aplicacion-ejemplo-1/icon.webp">
+          <figcaption>
+            <h4>App de ejemplo 1</h4>
+            <h5>Juegos carreras</h5>
+            <p class="punctuation">3.4<span><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                  class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></span></p>
+          </figcaption>
+        </figure>
+        <figure class="app-small-detailed">
+          <img src="media/images/apps/aplicacion-ejemplo-2/icon.webp">
+          <figcaption>
+            <h4>App de ejemplo 2</h4>
+            <h5>Resultados deportivos</h5>
+            <p class="punctuation">4.2<span><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                  class="fas fa-star"></i><i class="fas fa-star"><i class="far fa-star"></i></i></span></p>
+          </figcaption>
+        </figure>
+        <figure class="app-small-detailed">
+          <img src="media/images/apps/aplicacion-ejemplo-3/icon.webp">
+          <figcaption>
+            <h4>App de ejemplo 3</h4>
+            <h5>Juegos estrategia</h5>
+            <p class="punctuation">2.2<span><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                  class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></span></p>
+          </figcaption>
+        </figure>
+        <figure class="app-small-detailed">
+          <img src="media/images/apps/aplicacion-ejemplo-4/icon.webp">
+          <figcaption>
+            <h4>App de ejemplo 4</h4>
+            <h5>Utilidades navegación</h5>
+            <p class="punctuation">1.8<span><i class="fas fa-star"></i><i class="far fa-star"></i><i
+                  class="far fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></span></p>
+          </figcaption>
+        </figure>
+        <figure class="app-small-detailed">
+          <img src="media/images/apps/aplicacion-ejemplo-1/icon.webp">
+          <figcaption>
+            <h4>App de ejemplo 1</h4>
+            <h5>Juegos carreras</h5>
+            <p class="punctuation">3.4<span><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></span></p>
+          </figcaption>
+        </figure>
+        <figure class="app-small-detailed">
+          <img src="media/images/apps/aplicacion-ejemplo-2/icon.webp">
+          <figcaption>
+            <h4>App de ejemplo 2</h4>
+            <h5>Resultados deportivos</h5>
+            <p class="punctuation">4.2<span><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                  class="fas fa-star"></i><i class="fas fa-star"><i class="far fa-star"></i></i></span></p>
+          </figcaption>
+        </figure>
+      </div>
+      <div class="product-gallery margin-top-30px margin-bottom-30px">
+        <button class="left">&#10132;</button>
+        <div>
+          <figure class="app-small-detailed">
+            <img src="media/images/apps/aplicacion-ejemplo-1/full-image.webp">
+            <div class="information">
+              <img src="media/images/apps/aplicacion-ejemplo-1/icon.webp">
+              <figcaption>
+                <h4>App de ejemplo 1</h4>
+                <h5>Juegos carreras</h5>
+                <p class="punctuation">3.4<span><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                      class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></span></p>
+              </figcaption>
+            </div>
+          </figure>
+          <figure class="app-small-detailed">
+            <img src="media/images/apps/aplicacion-ejemplo-2/full-image.webp">
+            <div class="information">
+              <img src="media/images/apps/aplicacion-ejemplo-2/icon.webp">
+              <figcaption>
+                <h4>App de ejemplo 2</h4>
+                <h5>Juegos carreras</h5>
+                <p class="punctuation">3.4<span><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                      class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></span></p>
+              </figcaption>
+            </div>
+          </figure>
+          <figure class="app-small-detailed">
+            <img src="media/images/apps/aplicacion-ejemplo-3/full-image.webp">
+            <div class="information">
+              <img src="media/images/apps/aplicacion-ejemplo-3/icon.webp">
+              <figcaption>
+                <h4>App de ejemplo 3</h4>
+                <h5>Juegos carreras</h5>
+                <p class="punctuation">3.4<span><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                      class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></span></p>
+              </figcaption>
+            </div>
+          </figure>
+          <figure class="app-small-detailed">
+            <img src="media/images/apps/aplicacion-ejemplo-4/full-image.webp">
+            <div class="information">
+              <img src="media/images/apps/aplicacion-ejemplo-4/icon.webp">
+              <figcaption>
+                <h4>App de ejemplo 4</h4>
+                <h5>Juegos carreras</h5>
+                <p class="punctuation">3.4<span><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                      class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></span></p>
+              </figcaption>
+            </div>
+          </figure>
+          <figure class="app-small-detailed">
+            <img src="media/images/apps/aplicacion-ejemplo-1/full-image.webp">
+            <div class="information">
+              <img src="media/images/apps/aplicacion-ejemplo-1/icon.webp">
+              <figcaption>
+                <h4>App de ejemplo 1</h4>
+                <h5>Juegos carreras</h5>
+                <p class="punctuation">3.4<span><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                      class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></span></p>
+              </figcaption>
+            </div>
+          </figure>
+          <figure class="app-small-detailed">
+            <img src="media/images/apps/aplicacion-ejemplo-2/full-image.webp">
+            <div class="information">
+              <img src="media/images/apps/aplicacion-ejemplo-2/icon.webp">
+              <figcaption>
+                <h4>App de ejemplo 2</h4>
+                <h5>Juegos carreras</h5>
+                <p class="punctuation">3.4<span><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                      class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></span></p>
+              </figcaption>
+            </div>
+          </figure>
+          <figure class="app-small-detailed">
+            <img src="media/images/apps/aplicacion-ejemplo-3/full-image.webp">
+            <div class="information">
+              <img src="media/images/apps/aplicacion-ejemplo-3/icon.webp">
+              <figcaption>
+                <h4>App de ejemplo 3</h4>
+                <h5>Juegos carreras</h5>
+                <p class="punctuation">3.4<span><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                      class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></span></p>
+              </figcaption>
+            </div>
+          </figure>
+          <figure class="app-small-detailed">
+            <img src="media/images/apps/aplicacion-ejemplo-4/full-image.webp">
+            <div class="information">
+              <img src="media/images/apps/aplicacion-ejemplo-4/icon.webp">
+              <figcaption>
+                <h4>App de ejemplo 4</h4>
+                <h5>Juegos carreras</h5>
+                <p class="punctuation">3.4<span><i class="fas fa-star"></i><i class="fas fa-star"></i><i
+                      class="fas fa-star"></i><i class="far fa-star"></i><i class="far fa-star"></i></span></p>
+              </figcaption>
+            </div>
+          </figure>
+        </div>
+        <button class="right">&#10132;</button>
+    </section>
+    <p> </p>
+  </main>
+  <footer>
+    <div>
       <div>
-        <p><span class="bold">Bold example:</span> Lorem <a href="\">link example</a> fistrum
-          <span class="italic">italic example</span> de la pradera <span class="underline">underline example</span>
-          fistro torpedo la caidita diodeno torpedo no puedor ese que llega la caidita.
-          Tiene musho peligro por la gloria de mi madre se calle ustée ese pedazo de qué dise usteer por la gloria de mi
-          madre mamaar apetecan sexuarl a wan hasta luego Lucas. Te va a hasé pupitaa tiene musho peligro papaar papaar
-          no puedor me cago en tus muelas diodeno se calle ustée.
+        <h4 class="no-margin">Column</h4>
+        <p>Lorem fistrum la caidita apetecan condemor me cago en tus muelas ese hombree mamaar pecador.
+          Pupita qué dise usteer a gramenawer a gramenawer te voy a borrar el cerito.
         </p>
       </div>
       <div>
-        <h3>Product gallery - Portrait</h3>
-        <div class="product-gallery portrait">
-          <button class="left">&#10132;</button>
-          <div>
-            <div><img src="template_examples/product-1/full-image1.webp" /></div>
-            <div><img src="template_examples/product-1/full-image2.webp" /></div>
-            <div><img src="template_examples/product-1/full-image3.webp" /></div>
-            <div><img src="template_examples/product-1/full-image4.webp" /></div>
-            <div><img src="template_examples/product-1/full-image5.webp" /></div>
-            <div><img src="template_examples/product-1/full-image6.webp" /></div>
-            <div><img src="template_examples/product-1/full-image7.webp" /></div>
-          </div>
-          <button class="right">&#10132;</button>
-        </div>
+        <h4 class="no-margin">Column</h4>
+        <p>Lorem fistrum la caidita apetecan condemor me cago en tus muelas ese hombree mamaar pecador.
+          Pupita qué dise usteer a gramenawer a gramenawer te voy a borrar el cerito.
+        </p>
       </div>
       <div>
-        <h3>Product gallery - landscape</h3>
-        <div class="product-gallery landscape">
-          <button class="left">&#10132;</button>
-          <div>
-            <div><img src="template_examples/product-2/full-image1.webp"/></div>
-            <div><img src="template_examples/product-2/full-image2.webp"/></div>
-            <div><img src="template_examples/product-2/full-image3.webp"/></div>
-            <div><img src="template_examples/product-2/full-image4.webp"/></div>
-            <div><img src="template_examples/product-2/full-image5.webp"/></div>
-            <div><img src="template_examples/product-2/full-image6.webp"/></div>
-          </div>
-          <button class="right">&#10132;</button>
-        </div>
+        <h4 class="no-margin">Column</h4>
+        <p>Lorem fistrum la caidita apetecan condemor me cago en tus muelas ese hombree mamaar pecador.
+          Pupita qué dise usteer a gramenawer a gramenawer te voy a borrar el cerito.
+        </p>
       </div>
-      <p> </p>
-    </main>
-    <footer>
-      <div>
-        <div>
-          <h4 class="no-margin">Column</h4>
-          <p>Lorem fistrum la caidita apetecan condemor me cago en tus muelas ese hombree mamaar pecador.
-            Pupita qué dise usteer a gramenawer a gramenawer te voy a borrar el cerito.
-          </p>
-        </div>
-        <div>
-          <h4 class="no-margin">Column</h4>
-          <p>Lorem fistrum la caidita apetecan condemor me cago en tus muelas ese hombree mamaar pecador.
-            Pupita qué dise usteer a gramenawer a gramenawer te voy a borrar el cerito.
-          </p>
-        </div>
-        <div>
-          <h4 class="no-margin">Column</h4>
-          <p>Lorem fistrum la caidita apetecan condemor me cago en tus muelas ese hombree mamaar pecador.
-            Pupita qué dise usteer a gramenawer a gramenawer te voy a borrar el cerito.
-          </p>
-        </div>
-      </div>
-    </footer>
-  </body>
-  <script lang="text/javascript" src="theme/js/style.js"></script>
+    </div>
+  </footer>
+</body>
+<script lang="text/javascript" src="theme/js/style.js"></script>
+
 </html>
