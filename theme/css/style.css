@@ -133,6 +133,8 @@ input.clear:hover {
 .margin-top-20px { margin-top: 20px; }
 .margin-top-25px { margin-top: 25px; }
 .margin-top-30px { margin-top: 30px; }
+.margin-top-40px { margin-top: 40px; }
+.margin-top-50px { margin-top: 50px; }
 .margin-top-60px { margin-top: 60px; }
 
 .margin-left-0px { margin-left: 0px; }
@@ -516,9 +518,6 @@ figure.app-small-detailed:hover,
     cursor: pointer;
 }
 
-.product-gallery div {
-    /*border-spacing:20px;*/
-}
 .product-gallery figure.app-small-detailed {
 /*    background-color: #efefef; */
     border-radius: 20px;
