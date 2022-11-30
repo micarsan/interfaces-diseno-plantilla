@@ -766,8 +766,14 @@ nav.vertical ul li>ul>li a {
     }
 }
 
-@media screen and (min-width: 910px) {
+@media screen and (min-width: 1010px) {
     .grid-list {
         grid-template-columns: 33% 33% 33%;
+    }
+}
+
+@media screen and (min-width: 1250px) {
+    .grid-list {
+        grid-template-columns: 25% 25% 25% 25%;
     }
 }
