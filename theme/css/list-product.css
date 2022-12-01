@@ -17,28 +17,6 @@
   color: #3a3a3a;
 }
 
-#categories nav ul {
-  display: flex;
-  gap: 20px;
-  padding: 0px;
-}
-
-#categories nav ul li {
-  border: 1px rgb(218,220,224) solid;
-  border-radius: 9999px;
-  list-style: none;
-  padding: 5px 20px;
-}
-
-#categories nav ul li:nth-child(1) {
-  background-color: #e6f3ef;
-  border: none;
-}
-
-#categories nav ul li a {
-  text-decoration: none;
-}
-
 #list_games {
   display: grid;
   grid-template-columns: 33% 33% 33%;
@@ -101,6 +79,10 @@ figure {
 figure:hover, .game:hover {
   background-color: #3a3a3a20;
   cursor: pointer;
+}
+
+figure img {
+  pointer-events:none;
 }
 
 section#juego-destacado {

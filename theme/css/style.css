@@ -88,7 +88,8 @@ button {
 }
 
 button.light,
-input.light {
+input.light,
+a.light {
     background-color: rgba(var(--theme-light-acent-color_), 0.25);
     border: 1px solid rgba(var(--theme-light-acent-color_), 0.27);
     color: var(--theme-light-acent-color);
@@ -102,7 +103,8 @@ input.clear {
 }
 
 button.rounded,
-input.rounded {
+input.rounded,
+a.rounded {
     border-radius: 500px;
 }
 
