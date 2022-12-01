@@ -74,10 +74,11 @@ figcaption p i {
 
 figure {
   padding: 20px !important;
+  border-radius: 20px;
 }
 
 figure:hover, .game:hover {
-  background-color: #3a3a3a20;
+  background-color: #c0c0c0;
   cursor: pointer;
 }
 

@@ -44,7 +44,7 @@ window.addEventListener("load", function () {
     product_gallery();
 
     // product gallery full screen image
-    let images = document.querySelectorAll('.product-gallery img');
+    let images = document.querySelectorAll('.product-gallery div div img');
     for (let i = 0; i < images.length; i++) {
         images[i].addEventListener('click', function () {
             full_screen_image(i);
