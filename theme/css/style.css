@@ -607,7 +607,11 @@ figure.app-small-detailed .over a {
     text-align: center;
     border: 2px solid #eee;
     border-radius: 5px;
-    background-color: #444444cc;
+    background-color: #555555cc;
+}
+
+figure.app-small-detailed .over a:hover {
+    background-color: #222222cc;
 }
 
 figure.app-small-detailed .over a:first-child {
