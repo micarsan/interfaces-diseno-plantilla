@@ -154,8 +154,9 @@ body>footer>div {
         left: unset;
         top: unset;
         grid-template-areas:
-        'title title'
-        'links links';
+            'title title'
+            'links links';
+        grid-template-columns: auto 0px;
     }
     #content aside div.button {
         display: none;
